@@ -28,5 +28,25 @@
     "highlight.js": "^11.10.0",
     "markdown-it": "^14.1.0",
     "parse5": "^7.1.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Nish-Labs/stack.git"
+  },
+  "homepage": "https://github.com/Nish-Labs/stack",
+  "bugs": {
+    "url": "https://github.com/Nish-Labs/stack/issues"
+  },
+  "keywords": [
+    "static-site",
+    "stk",
+    "markdown",
+    "html",
+    "css",
+    "cli",
+    "themes"
+  ],
+  "publishConfig": {
+    "access": "public"
   }
 }

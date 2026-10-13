@@ -70,7 +70,7 @@ program.command('dev [input]')
       'Surrogate-Control': 'no-store',
     };
     let table = routes(input);
-    const RELOAD = '<script>(function(){try{if("caches"in window)caches.keys().then(function(ks){ks.forEach(function(k){caches.delete(k)})})}catch(e){}var es=new EventSource("/__reload");es.onmessage=function(){var u=new URL(location.href);u.searchParams.set("_stk",Date.now());location.replace(u.toString())}})()</script>';
+    const RELOAD = '<script>(function(){var es=new EventSource("/__reload");es.onmessage=function(){location.reload()}})()</script>';
     const purgeSrc = () => {
       for (const k of Object.keys(require.cache)) {
         if (k.includes(path.sep + 'src' + path.sep) || k.endsWith(path.sep + 'src')) delete require.cache[k];

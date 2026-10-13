@@ -27,6 +27,10 @@ if (r.status !== 0) { sp.fail('Could not install dependencies'); console.log(c.d
 sp.succeed('Dependencies installed');
 
 // 3. Global command
+try {
+  fs.chmodSync(path.join(__dirname, 'bin', 'stk.js'), 0o755);
+  fs.chmodSync(path.join(__dirname, 'bin', 'stack.js'), 0o755);
+} catch (e) { /* ignore on windows */ }
 sp = ui.spinner('Registering stk and stack commands');
 r = run('npm', ['link', '--loglevel=error']);
 let linked = r.status === 0;

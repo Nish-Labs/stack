@@ -115,7 +115,7 @@ function compile(src, opts = {}) {
   if (pa.heading) { addFont(pa.heading + ':wght@500;600;700;800'); overrides += `--heading-font:'${pa.heading}',system-ui,sans-serif;`; }
   const fam = [...specs.values()].map((s) => 'family=' + s.replace(/ /g, '+')).join('&amp;');
   const fonts = fam
-    ? `<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?${fam}&amp;display=swap">`
+    ? `<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?${fam}&amp;display=swap" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?${fam}&amp;display=swap"></noscript>`
     : '';
 
   // css
@@ -144,7 +144,7 @@ function compile(src, opts = {}) {
   ].join('');
 
   const state = JSON.stringify(ctx.state).replace(/</g, '\\u003c');
-  return `<!DOCTYPE html><html lang="${esc(pa.lang || 'en')}" data-theme="${themeName}"><head>${head}</head><body><main class="stk-page">${body}</main>${ctx.icons ? `<script src="${CDN}"></script>` : ''}<script>window.__STK_STATE__=${state};${readAsset('runtime.browser.js')}</script></body></html>`;
+  return `<!DOCTYPE html><html lang="${esc(pa.lang || 'en')}" data-theme="${themeName}"><head>${head}</head><body><main class="stk-page">${body}</main>${ctx.icons ? `<script src="${CDN}" defer onload="window.lucide&&window.lucide.createIcons&&window.lucide.createIcons()"></script>` : ''}<script>window.__STK_STATE__=${state};${readAsset('runtime.browser.js')}</script></body></html>`;
 }
 
 module.exports = { compile };
