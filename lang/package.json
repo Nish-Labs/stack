@@ -1,0 +1,32 @@
+{
+  "name": "stack",
+  "version": "0.2.4",
+  "description": "Stack: write HTML, CSS, JS and Markdown in one .stk file. Built-in themes, components and Lucide icons.",
+  "license": "MIT",
+  "bin": {
+    "stk": "bin/stk.js",
+    "stack": "bin/stk.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "vscode-ext",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "setup": "node setup.js",
+    "dev": "node bin/stk.js dev site",
+    "build": "node bin/stk.js build site --out dist",
+    "doctor": "node bin/stk.js doctor"
+  },
+  "dependencies": {
+    "chokidar": "^3.6.0",
+    "commander": "^12.1.0",
+    "highlight.js": "^11.10.0",
+    "markdown-it": "^14.1.0",
+    "parse5": "^7.1.2"
+  }
+}

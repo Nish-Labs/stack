@@ -1,0 +1,31 @@
+<page title="Portfolio — Stack template" theme="midnight" favicon="/logo.svg">
+<navbar brand="Alex Rivera" icon="layers" links="Work:#work, About:#about, Contact:#contact" cta="Email me:mailto:alex@example.com">
+  <themeswitch />
+</navbar>
+<hero>
+  <h1>Product designer &amp; builder</h1>
+  <p class="lead">I design and ship interfaces that feel inevitable. Currently open to select projects.</p>
+  <div class="stk-row">
+    <button href="#work" icon="arrow-down">See work</button>
+    <button variant="secondary" href="mailto:alex@example.com" icon="mail">Get in touch</button>
+  </div>
+</hero>
+<section id="work">
+  <h2>Selected work</h2>
+  <grid cols="2">
+    <card icon="smartphone" title="Fintech mobile">End-to-end design for a savings app used by 40k people.</card>
+    <card icon="layout" title="Docs platform">Redesigned navigation and search for a developer portal.</card>
+    <card icon="shopping-bag" title="Retail checkout">Reduced drop-off 18% with a clearer multi-step flow.</card>
+    <card icon="bar-chart" title="Analytics suite">Dashboard system for a B2B SaaS team.</card>
+  </grid>
+</section>
+<section id="about">
+  <h2>About</h2>
+  <p>Based in Lisbon. Previously at two startups and one agency. I care about clarity, restraint and shipping.</p>
+</section>
+<section id="contact">
+  <h2>Contact</h2>
+  <alert type="info">alex@example.com · available for new work from next month.</alert>
+</section>
+<footer github="example">© Alex Rivera. Built with Stack.</footer>
+</page>

@@ -1,0 +1,241 @@
+<page title="Stack docs" description="Install Stack, learn the components, themes and CLI, and deploy to Vercel." theme="midnight" favicon="/logo.svg">
+
+<style>
+.docs{display:grid;grid-template-columns:210px minmax(0,1fr);gap:3rem;padding-top:1.5rem}
+.side{position:sticky;top:5rem;align-self:start;display:flex;flex-direction:column;font-size:.92rem;max-height:calc(100vh - 6rem);overflow:auto}
+.side a{padding:.3rem .8rem;border-left:2px solid var(--border);color:var(--muted)!important;text-decoration:none}
+.side a:hover{color:var(--text)!important;border-left-color:var(--accent)}
+.prose{min-width:0}
+.prose h1{font-size:clamp(2rem,4vw,2.8rem)}
+.prose h2{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);scroll-margin-top:5rem}
+.prose h3{margin-top:1.8rem;scroll-margin-top:5rem}
+@media(max-width:860px){.docs{grid-template-columns:minmax(0,1fr)}.side{position:static;flex-direction:row;flex-wrap:wrap;gap:.4rem;max-height:none}.side a{border:1px solid var(--border);border-radius:999px;padding:.25rem .8rem}}
+</style>
+
+<navbar brand="Stack" icon="layers" links="Home:/, Docs:/docs">
+  <themeswitch />
+</navbar>
+
+<section class="docs">
+  <nav class="side">
+    <a href="#install">Install</a>
+    <a href="#commands">Commands</a>
+    <a href="#pages-and-the-page-tag">Pages and the page tag</a>
+    <a href="#components">Components</a>
+    <a href="#icons">Icons</a>
+    <a href="#state-and-events">State and events</a>
+    <a href="#themes">Themes</a>
+    <a href="#markdown">Markdown</a>
+    <a href="#multiple-pages">Multiple pages</a>
+    <a href="#vs-code">VS Code</a>
+    <a href="#deploy-to-vercel">Deploy to Vercel</a>
+    <a href="#run-it-like-a-pro">Run it like a pro</a>
+    <a href="#limits-and-roadmap">Limits and roadmap</a>
+  </nav>
+
+  <div class="prose">
+    <md>
+      # Documentation
+
+      Stack turns a `.stk` file, which mixes HTML, CSS, JavaScript and Markdown, into a plain static web page.
+
+      ## Install
+
+      You need Node 18 or newer. From the Stack folder run one command:
+
+      ```bash
+      node setup.js
+      ```
+
+      The setup script checks Node, installs dependencies, registers the global `stk` command and installs the VS Code extension when the `code` command is available. Run `stk doctor` any time to check your setup.
+
+      ## Commands
+
+      | Command | What it does |
+      |---|---|
+      | `stk new [name]` | Creates a project. Options: `--theme <name>`, `--dep <spec>` |
+      | `stk dev [input]` | Dev server with live reload. Options: `-p, --port`, `-o, --open` |
+      | `stk build [input]` | Writes static files to `dist/`. Option: `-o, --out <dir>` |
+      | `stk themes` | Lists built-in themes with color swatches |
+      | `stk doctor` | Checks Node, the `stk` command and your project |
+
+      `input` is a `.stk` file or a folder of them. When you leave it out, Stack looks for a `pages` folder, then `site`, then `index.stk`.
+
+      ## Pages and the page tag
+
+      Wrap each file in one `page` tag. Its attributes set the page title and look.
+
+      | Attribute | Meaning |
+      |---|---|
+      | `title` | Browser tab title |
+      | `description` | Search and social description |
+      | `theme` | A built-in theme or one of your own. Default `midnight` |
+      | `font` | Any Google Fonts family for body text |
+      | `heading` | Any Google Fonts family for headings |
+      | `favicon` | Path to the tab icon, for example `/logo.svg` |
+      | `og-image` | Image used for social previews |
+      | `lang` | Page language. Default `en` |
+
+      ## Components
+
+      Each tag below becomes themed, responsive HTML. Regular HTML works everywhere too.
+
+      | Tag | Attributes | Result |
+      |---|---|---|
+      | `navbar` | `brand`, `icon`, `links`, `cta` | Sticky top bar. `links="Home:/, Docs:/docs"`. Child tags appear on the right |
+      | `hero` | none | Spacious intro section |
+      | `card` | `icon`, `title`, `href` | Bordered box. With `href` the whole card is a link |
+      | `alert` | `type`, `icon` | Callout. Types: `info`, `success`, `warning`, `danger` |
+      | `button` | `href`, `variant`, `icon`, `size` | Variants: `primary`, `secondary`, `ghost`, `none`. `size="sm"` is smaller |
+      | `badge` | `icon` | Small pill label |
+      | `icon` | `name`, `size` | A Lucide icon |
+      | `grid` | `cols` (1 to 6) | Equal columns that collapse on small screens |
+      | `row`, `stack` | none | Flex row, flex column |
+      | `themeswitch` | none | Theme picker, remembered between visits |
+      | `state` | any name | Declares reactive values |
+
+      ```
+      <grid cols="3">
+        <card icon="zap" title="Fast">Static output, no framework.</card>
+        <card icon="palette" title="Themed">Ten themes included.</card>
+        <alert type="success">Compiled without errors.</alert>
+      </grid>
+      ```
+
+      ## Icons
+
+      Stack bundles [Lucide](https://lucide.dev/icons) through a CDN script that is added only to pages that use an icon. Pass a Lucide name to `icon` on cards, buttons, badges, alerts and the navbar, or use the `icon` tag anywhere:
+
+      ```
+      <button icon="rocket">Launch</button>
+      <icon name="heart" size="20" />
+      ```
+
+      The Lucide version is pinned in `src/icons.js`. Lucide has no brand logos, so use text for names like GitHub.
+
+      ## State and events
+
+      Declare values with `state`, show them with curly braces in text, and change them from `on:` attributes.
+
+      ```
+      <state count="0" name="friend" />
+
+      <p>Hello {name}</p>
+      <input on:input="name=e.target.value" />
+      <button on:click="count++">Clicked {count} times</button>
+      ```
+
+      - Values are read as JSON, so `0`, `true` and `[1,2]` work. Anything else is text.
+      - Any event works: `on:click`, `on:input`, `on:mouseover`.
+      - Handler code is plain JavaScript. State names act as variables and `e` is the event.
+      - Declare a name in `state` before using it.
+
+      ## Themes
+
+      Ten themes ship with Stack: `midnight`, `daylight`, `paper`, `neon`, `ocean`, `forest`, `sunset`, `rose`, `dracula` and `nord`. Set one with `theme="ocean"` on the page tag, or add a `themeswitch` so visitors can pick.
+
+      Every theme is a set of CSS variables: `bg`, `surface`, `surface-2`, `border`, `text`, `muted`, `accent`, `accent-2`, `accent-text`, `radius`, `shadow`, `font`, `heading-font` and `mono-font`.
+
+      Override any variable for the whole project in `stack.config.json`:
+
+      ```json
+      { "vars": { "accent": "#ff5500", "radius": "8px" } }
+      ```
+
+      To add a theme, create `themes/mytheme.json` in your project with the keys you want to change, then use `theme="mytheme"`. Put your own CSS in `stack.css`. It loads after the theme.
+
+      ## Markdown
+
+      Put Markdown between &lt;md&gt; and &lt;/md&gt; tags. It becomes HTML and can sit inside any component.
+
+      - Headings, lists, tables and links work. Raw HTML is allowed.
+      - Fenced code is highlighted for `html`, `stk`, `js`, `css`, `json`, `bash` and `markdown`, with a copy button.
+      - Common leading spaces are removed, so you can indent the block.
+      - Curly-brace state is not applied inside Markdown.
+
+      ## Multiple pages
+
+      Point Stack at a folder. Every `.stk` file becomes a page: `index.stk` is `/`, `about.stk` is `/about`, and `guide/index.stk` is `/guide`. Files in a `public` folder are copied as they are, which is the place for logos and images.
+
+      ## VS Code
+
+      `node setup.js` installs the extension when the `code` command exists. It adds highlighting for Markdown, CSS and JavaScript blocks plus snippets: `page`, `navbar`, `hero`, `card`, `button`, `alert`, `grid`, `state`, `icon`, `badge` and `md`. Without the extension, add this to your settings for basic highlighting:
+
+      ```json
+      { "files.associations": { "*.stk": "html" } }
+      ```
+
+      ## Deploy to Vercel
+
+      Vercel builds your site on every push and hosts the result. You need a free Vercel account and your project in a Git repository on GitHub, GitLab or Bitbucket.
+
+      ### Option 1: this repository
+
+      The Stack folder is already set up: `vercel.json` and the build script are in place.
+
+      1. Push the folder to a new GitHub repository.
+      2. In Vercel choose **Add New**, then **Project**, and import the repository.
+      3. Set **Framework Preset** to **Other**. The build settings are filled in from `vercel.json`:
+
+      | Setting | Value |
+      |---|---|
+      | Build Command | `npm run build` |
+      | Output Directory | `dist` |
+      | Install Command | `npm install` |
+
+      4. Click **Deploy**. Every later push redeploys, and pull requests get preview URLs.
+
+      ### Option 2: your own site
+
+      ```bash
+      stk new my-site --dep github:YOURNAME/stack
+      cd my-site
+      git init && git add . && git commit -m "first commit"
+      ```
+
+      Push to GitHub and import the repository in Vercel as above. The `--dep` flag adds Stack to `package.json` so Vercel's build machine can install it and run `stk build`. Once Stack is published to npm, use `npm install -D stack` instead.
+
+      ### Option 3: the Vercel CLI
+
+      ```bash
+      npm install -g vercel
+      vercel login
+      vercel          # preview deployment
+      vercel --prod   # production deployment
+      ```
+
+      Run these from your project folder. Vercel reads `vercel.json` and builds remotely.
+
+      ### Custom domain
+
+      Open your project in Vercel, then **Settings**, **Domains**, and add your domain. Vercel shows the exact DNS records to create at your registrar. Certificates are issued automatically.
+
+      ### Clean URLs
+
+      `vercel.json` sets `cleanUrls`, so `docs.html` is served at `/docs`. Link to `/docs`, not `/docs.html`.
+
+      ## Run it like a pro
+
+      - Run `stk build` before you push. It exits with an error on problems, so a broken page fails the Vercel build instead of shipping.
+      - Commit `package-lock.json` so builds are repeatable.
+      - Fill in `title`, `description`, `favicon` and `og-image` on every page.
+      - Keep brand tweaks in `stack.config.json` and `stack.css` instead of editing built-in files.
+      - Use preview deployments to review changes before they reach production.
+      - Run `stk doctor` first when something behaves oddly.
+
+      ## Limits and roadmap
+
+      Stack is young. Today:
+
+      - Curly-brace values work in text, not inside attributes.
+      - Your own `script` code cannot read Stack state.
+      - Attribute values cannot contain the angle bracket characters.
+      - No imports, loops or conditionals yet.
+
+      Planned: imports for reusable components, loops and conditions, attribute bindings, and more components such as tabs and modal.
+    </md>
+  </div>
+</section>
+
+<footer>Built with Stack.</footer>
+</page>

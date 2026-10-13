@@ -1,0 +1,8 @@
+{
+  "name": "landing",
+  "private": true,
+  "scripts": {
+    "dev": "node ../lang/bin/stk.js dev",
+    "build": "node ../lang/bin/stk.js build --out dist"
+  }
+}

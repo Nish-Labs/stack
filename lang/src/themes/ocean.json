@@ -1,0 +1,25 @@
+{
+  "label": "Ocean",
+  "scheme": "dark",
+  "fonts": [
+    "Bricolage Grotesque:wght@500;600;700;800",
+    "Instrument Sans:wght@400;500;600;700",
+    "JetBrains Mono:wght@400;500;700"
+  ],
+  "vars": {
+    "bg": "#04141f",
+    "surface": "#08202f",
+    "surface-2": "#0d2d42",
+    "border": "#164560",
+    "text": "#e4f5fc",
+    "muted": "#85b6cb",
+    "accent": "#22d3ee",
+    "accent-2": "#34e0b5",
+    "accent-text": "#03171f",
+    "radius": "14px",
+    "shadow": "0 18px 40px -22px rgba(0,0,0,.8)",
+    "font": "'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif",
+    "heading-font": "'Bricolage Grotesque','Instrument Sans',system-ui,sans-serif",
+    "mono-font": "'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace"
+  }
+}

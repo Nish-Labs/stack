@@ -1,0 +1,25 @@
+{
+  "label": "Sunset",
+  "scheme": "dark",
+  "fonts": [
+    "Bricolage Grotesque:wght@500;600;700;800",
+    "Instrument Sans:wght@400;500;600;700",
+    "JetBrains Mono:wght@400;500;700"
+  ],
+  "vars": {
+    "bg": "#160a10",
+    "surface": "#211119",
+    "surface-2": "#2e1722",
+    "border": "#4d2535",
+    "text": "#fdeee8",
+    "muted": "#c9a39b",
+    "accent": "#ff9142",
+    "accent-2": "#ff4f7b",
+    "accent-text": "#1c0a04",
+    "radius": "16px",
+    "shadow": "0 18px 40px -22px rgba(0,0,0,.8)",
+    "font": "'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif",
+    "heading-font": "'Bricolage Grotesque','Instrument Sans',system-ui,sans-serif",
+    "mono-font": "'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace"
+  }
+}

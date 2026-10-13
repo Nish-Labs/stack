@@ -1,0 +1,25 @@
+{
+  "label": "Nord",
+  "scheme": "dark",
+  "fonts": [
+    "Bricolage Grotesque:wght@500;600;700;800",
+    "Instrument Sans:wght@400;500;600;700",
+    "JetBrains Mono:wght@400;500;700"
+  ],
+  "vars": {
+    "bg": "#2b303b",
+    "surface": "#363c4a",
+    "surface-2": "#3f4757",
+    "border": "#4f586b",
+    "text": "#eceff4",
+    "muted": "#aab4c6",
+    "accent": "#88c0d0",
+    "accent-2": "#81a1c1",
+    "accent-text": "#232831",
+    "radius": "10px",
+    "shadow": "0 18px 40px -22px rgba(0,0,0,.8)",
+    "font": "'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif",
+    "heading-font": "'Bricolage Grotesque','Instrument Sans',system-ui,sans-serif",
+    "mono-font": "'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace"
+  }
+}

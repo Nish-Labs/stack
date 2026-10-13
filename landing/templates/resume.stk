@@ -1,0 +1,30 @@
+<page title="Resume — Stack template" theme="daylight" favicon="/logo.svg">
+<navbar brand="Jordan Lee" icon="file-text" links="Experience:#exp, Skills:#skills, Education:#edu" cta="Download PDF:#">
+  <themeswitch />
+</navbar>
+<hero>
+  <h1>Jordan Lee</h1>
+  <p class="lead">Full-stack engineer · TypeScript, design systems, static tooling.</p>
+  <badge icon="map-pin">Remote · EU</badge>
+</hero>
+<section id="exp">
+  <h2>Experience</h2>
+  <card title="Senior Engineer · Northwind">2022–present · Led the design-system migration and cut build times 40%.</card>
+  <card title="Engineer · Contoso Labs">2019–2022 · Shipped the public API and docs site.</card>
+</section>
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="stk-row">
+    <badge>TypeScript</badge>
+    <badge>React</badge>
+    <badge>Node</badge>
+    <badge>CSS</badge>
+    <badge>CI/CD</badge>
+  </div>
+</section>
+<section id="edu">
+  <h2>Education</h2>
+  <p>BSc Computer Science · University of Edinburgh</p>
+</section>
+<footer>© Jordan Lee. Built with Stack.</footer>
+</page>

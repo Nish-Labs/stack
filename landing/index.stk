@@ -1,0 +1,166 @@
+<page title="Stack — write a whole web page in one file" description="HTML, CSS, JS and Markdown in a single .stk file. Ten themes, Lucide icons, components, and a CLI that ships static sites." theme="midnight" favicon="/logo.svg">
+
+<style>
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(2rem,5vw,4.5rem);align-items:center}
+.hero-grid h1{max-width:12ch;letter-spacing:-.03em}
+.chips-label{margin:1.75rem 0 .55rem;font-size:.86rem;color:var(--muted);letter-spacing:.02em}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem}
+.chip{display:inline-flex;align-items:center;gap:.4rem;padding:.32rem .78rem;border:1px solid var(--border);background:var(--surface);color:var(--text);border-radius:999px;font:500 .84rem var(--font);cursor:pointer;transition:border-color .15s,transform .12s}
+.chip:hover{border-color:var(--accent);transform:translateY(-1px)}
+.chip i{width:.72rem;height:.72rem;border-radius:50%;background:var(--d);box-shadow:0 0 0 2px color-mix(in srgb,var(--d) 25%,transparent)}
+.win{border:1px solid var(--border);border-radius:calc(var(--radius) + 2px);overflow:hidden;background:var(--surface);box-shadow:var(--shadow)}
+.win-bar{padding:.55rem 1.05rem;border-bottom:1px solid var(--border);color:var(--muted);font:500 .78rem var(--mono-font);display:flex;align-items:center;gap:.5rem}
+.win-bar::before{content:"";width:.55rem;height:.55rem;border-radius:50%;background:#ff5f57;box-shadow:1.1rem 0 0 #febc2e,2.2rem 0 0 #28c840}
+.win pre{margin:0;border:0;border-radius:0;background:transparent}
+.result{padding:1.6rem 1.5rem;background:var(--bg);border-top:1px solid var(--border)}
+.result h3{font-size:1.55rem;margin:0 0 .85rem}
+.feats{gap:0 2.5rem}
+.feat{display:flex;gap:1rem;padding:1.3rem 0;border-top:1px solid var(--border)}
+.feat .stk-icon{color:var(--accent);width:1.45rem;height:1.45rem;margin-top:.15rem;flex-shrink:0}
+.feat h3{margin:0 0 .2rem;font-size:1.05rem}
+.feat p{margin:0;color:var(--muted);font-size:.95rem;line-height:1.5}
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(1.5rem,4vw,3rem);align-items:start}
+.terminal{margin:1.1rem 0 0;line-height:1.7;font-size:.9rem}
+.terminal .ok{color:#3ddc97}
+.terminal .dim{color:var(--muted)}
+.section-label{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 .4rem}
+.cta-row{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.25rem}
+@media(max-width:900px){.hero-grid,.split{grid-template-columns:minmax(0,1fr)}.hero-grid h1{max-width:none}}
+</style>
+
+<navbar brand="Stack" icon="layers" links="Features:#features, Templates:/templates, Themes:/themes, Docs:/docs" cta="Install:#start">
+  <themeswitch />
+</navbar>
+
+<state count="0" />
+
+<hero>
+  <div class="hero-grid">
+    <div>
+      <p class="section-label">One file. Real static sites.</p>
+      <h1>Write a whole web page in one file.</h1>
+      <p class="lead">Stack compiles HTML, CSS, JavaScript and Markdown from a single <code>.stk</code> file into a fast static site. Ten themes, Lucide icons, and ready components — no framework required.</p>
+      <div class="cta-row">
+        <button href="#start" icon="download">Install Stack</button>
+        <button href="/docs" variant="secondary" icon="book-open">Read the docs</button>
+        <button href="/templates" variant="ghost" icon="layout-template">Browse templates</button>
+      </div>
+      <p class="chips-label">Pick a theme — this page updates instantly:</p>
+      <div class="chips">
+        <button variant="none" class="chip" data-theme-set="midnight"><i style="--d:#5eb8ff"></i>Midnight</button>
+        <button variant="none" class="chip" data-theme-set="daylight"><i style="--d:#2358e6"></i>Daylight</button>
+        <button variant="none" class="chip" data-theme-set="paper"><i style="--d:#a5470f"></i>Paper</button>
+        <button variant="none" class="chip" data-theme-set="neon"><i style="--d:#ff3df2"></i>Neon</button>
+        <button variant="none" class="chip" data-theme-set="ocean"><i style="--d:#22d3ee"></i>Ocean</button>
+        <button variant="none" class="chip" data-theme-set="forest"><i style="--d:#3ddc97"></i>Forest</button>
+        <button variant="none" class="chip" data-theme-set="sunset"><i style="--d:#ff9142"></i>Sunset</button>
+        <button variant="none" class="chip" data-theme-set="rose"><i style="--d:#e11d48"></i>Rose</button>
+        <button variant="none" class="chip" data-theme-set="dracula"><i style="--d:#bd93f9"></i>Dracula</button>
+        <button variant="none" class="chip" data-theme-set="nord"><i style="--d:#88c0d0"></i>Nord</button>
+      </div>
+    </div>
+
+    <div class="win" aria-label="Live demo">
+      <div class="win-bar">hello.stk</div>
+      <md>
+```stk
+<page title="Hello" theme="ocean">
+  <navbar brand="Hello" icon="layers" />
+  <state count="0" />
+
+  <hero>
+    <h1>Hello, Stack</h1>
+    <button icon="rocket" on:click="count++">
+      Clicked {count} times
+    </button>
+  </hero>
+</page>
+```
+      </md>
+      <div class="win-bar">what it builds</div>
+      <div class="result">
+        <h3>Hello, Stack</h3>
+        <button icon="rocket" on:click="count++">Clicked {count} times</button>
+      </div>
+    </div>
+  </div>
+</hero>
+
+<section id="features">
+  <p class="section-label">Capabilities</p>
+  <h2>Everything a small site needs</h2>
+  <grid cols="2" class="feats">
+    <div class="feat"><icon name="file-code" /><div><h3>One file per page</h3><p>Markup, styles, scripts and Markdown live together. A folder of <code>.stk</code> files becomes a multi-page site.</p></div></div>
+    <div class="feat"><icon name="palette" /><div><h3>Ten themes</h3><p>Midnight to Nord. Change one attribute, or override any color in <code>stack.config.json</code>.</p></div></div>
+    <div class="feat"><icon name="blocks" /><div><h3>Ready components</h3><p>Navbar, hero, card, alert, grid, button, badge — already styled and responsive.</p></div></div>
+    <div class="feat"><icon name="file-text" /><div><h3>Markdown built in</h3><p>Write prose in an <code>md</code> tag. Code blocks are highlighted and get a copy button.</p></div></div>
+    <div class="feat"><icon name="zap" /><div><h3>Small reactivity</h3><p>Declare state, show it with curly braces, change it from a click handler. No framework.</p></div></div>
+    <div class="feat"><icon name="shapes" /><div><h3>Lucide icons</h3><p>Over 2,000 icons by name, loaded from a CDN only when a page uses one.</p></div></div>
+    <div class="feat"><icon name="terminal" /><div><h3>A CLI that talks back</h3><p>Live reload, clear errors, and file sizes after every build.</p></div></div>
+    <div class="feat"><icon name="cloud-upload" /><div><h3>Static output</h3><p>Plain HTML you can host anywhere. A Vercel config is included.</p></div></div>
+  </grid>
+</section>
+
+<section id="start">
+  <p class="section-label">Get started</p>
+  <h2>Set up in a minute</h2>
+  <p class="lead">You need Node 18 or newer.</p>
+  <div class="split">
+    <div>
+      <md>
+**1. Install Stack once.**
+
+```bash
+git clone https://github.com/NishantGits/stack
+cd stack && node setup.js
+```
+
+**2. Create a site and start it.**
+
+```bash
+stk new my-site
+cd my-site && stk dev
+```
+
+**3. Build for production.**
+
+```bash
+stk build
+```
+      </md>
+    </div>
+    <div>
+      <pre class="terminal"><span class="dim">$</span> stk build
+
+<span class="ok">✔</span> Built 14 pages in 42ms into dist/
+
+    index.html          19.4 kB  <span class="dim">5.6 kB gzip</span>
+    docs.html           28.1 kB  <span class="dim">7.2 kB gzip</span>
+    templates.html      12.8 kB  <span class="dim">3.9 kB gzip</span>
+    themes.html         11.2 kB  <span class="dim">3.4 kB gzip</span>
+    …                   …
+
+<span class="dim">Total 98.4 kB</span></pre>
+      <alert type="info">Ready to publish? The docs cover deploying to Vercel step by step.</alert>
+      <div class="cta-row">
+        <button href="/docs#deploy-to-vercel" variant="secondary" icon="cloud-upload">Deploy to Vercel</button>
+        <button href="/templates" variant="ghost" icon="layout-template">Start from a template</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <p class="section-label">Next</p>
+  <h2>Explore</h2>
+  <grid cols="3">
+    <card icon="layout-template" title="Templates" href="/templates">12 ready-to-use sites — portfolio, SaaS, link-in-bio, restaurant and more. Copy or scaffold with the CLI.</card>
+    <card icon="palette" title="Themes" href="/themes">See every built-in theme live. Switch and compare colors, fonts and contrast.</card>
+    <card icon="book-open" title="Docs" href="/docs">Every component, CLI command, theme variable and deployment path.</card>
+  </grid>
+</section>
+
+<footer github="NishantGits" x="NishantGits">
+  © Stack. Write a whole web page in one file. Built by NishantGits.
+</footer>
+</page>

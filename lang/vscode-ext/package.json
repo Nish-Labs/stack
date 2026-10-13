@@ -1,0 +1,21 @@
+{
+  "name": "stack",
+  "displayName": "Stack",
+  "description": "Syntax highlighting and snippets for Stack (.stk) files",
+  "version": "0.2.0",
+  "publisher": "stack",
+  "license": "MIT",
+  "repository": { "type": "git", "url": "https://github.com/NishantGits/stack" },
+  "engines": { "vscode": "^1.80.0" },
+  "categories": ["Programming Languages", "Snippets"],
+  "contributes": {
+    "languages": [{ "id": "stack", "aliases": ["Stack", "stk"], "extensions": [".stk"], "configuration": "./language-configuration.json" }],
+    "grammars": [{
+      "language": "stack",
+      "scopeName": "source.stk",
+      "path": "./syntaxes/stack.tmLanguage.json",
+      "embeddedLanguages": { "meta.embedded.md": "markdown", "meta.embedded.js": "javascript", "meta.embedded.css": "css" }
+    }],
+    "snippets": [{ "language": "stack", "path": "./snippets/stack.json" }]
+  }
+}

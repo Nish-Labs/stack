@@ -1,0 +1,25 @@
+<page title="Personal — Stack template" theme="nord" favicon="/logo.svg">
+<navbar brand="Sam" icon="smile" links="Notes:#notes, Links:#links">
+  <themeswitch />
+</navbar>
+<hero>
+  <h1>Hi, I'm Sam.</h1>
+  <p class="lead">I build small tools and write about them. Based in Berlin.</p>
+</hero>
+<section id="notes">
+  <h2>Notes</h2>
+  <md>
+- Working on a local-first notes app
+- Learning letterpress this winter
+- Currently reading *The Timeless Way of Building*
+  </md>
+</section>
+<section id="links">
+  <h2>Links</h2>
+  <div class="stk-row">
+    <button variant="secondary" href="#" icon="github">GitHub</button>
+    <button variant="secondary" href="#" icon="mail">Email</button>
+  </div>
+</section>
+<footer>Built with Stack.</footer>
+</page>

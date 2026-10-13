@@ -1,0 +1,25 @@
+<page title="Newsletter — Stack template" theme="paper" favicon="/logo.svg">
+<navbar brand="Weekly Signal" icon="mail" links="Issues:#issues, About:#about" cta="Subscribe:#sub">
+  <themeswitch />
+</navbar>
+<hero>
+  <h1>One useful idea every week</h1>
+  <p class="lead">No ads. No fluff. Tools, systems and shipping notes.</p>
+  <button href="#sub" icon="mail">Subscribe free</button>
+</hero>
+<section id="issues">
+  <h2>Recent issues</h2>
+  <card title="#42 — Delete more">Why removing features can increase retention.</card>
+  <card title="#41 — Theme tokens">A minimal set of CSS variables that scale.</card>
+  <card title="#40 — Static is underrated">When not to reach for a framework.</card>
+</section>
+<section id="sub">
+  <h2>Subscribe</h2>
+  <alert type="success">Join 4,200 readers. Unsubscribe anytime.</alert>
+</section>
+<section id="about">
+  <h2>About</h2>
+  <p>Written by an independent maker. Built with Stack.</p>
+</section>
+<footer>© Weekly Signal.</footer>
+</page>

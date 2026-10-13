@@ -1,0 +1,25 @@
+{
+  "label": "Rose",
+  "scheme": "light",
+  "fonts": [
+    "Bricolage Grotesque:wght@500;600;700;800",
+    "Instrument Sans:wght@400;500;600;700",
+    "JetBrains Mono:wght@400;500;700"
+  ],
+  "vars": {
+    "bg": "#fff6f8",
+    "surface": "#ffffff",
+    "surface-2": "#ffeaf0",
+    "border": "#f8d0dd",
+    "text": "#3a0f20",
+    "muted": "#8a5a6a",
+    "accent": "#e11d48",
+    "accent-2": "#c026d3",
+    "accent-text": "#ffffff",
+    "radius": "18px",
+    "shadow": "0 14px 34px -20px rgba(20,24,40,.25)",
+    "font": "'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif",
+    "heading-font": "'Bricolage Grotesque','Instrument Sans',system-ui,sans-serif",
+    "mono-font": "'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace"
+  }
+}

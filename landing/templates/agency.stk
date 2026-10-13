@@ -1,0 +1,34 @@
+<page title="Agency — Stack template" theme="ocean" favicon="/logo.svg">
+<navbar brand="North Studio" icon="hexagon" links="Work:#work, Services:#services, Team:#team" cta="Contact:#contact">
+  <themeswitch />
+</navbar>
+<hero>
+  <h1>Brand and product for ambitious teams</h1>
+  <p class="lead">We partner on strategy, design and front-end delivery.</p>
+  <button href="#contact" icon="mail">Start a project</button>
+</hero>
+<section id="work">
+  <h2>Selected work</h2>
+  <grid cols="2">
+    <card title="Atlas Health">Identity and marketing site for a telehealth startup.</card>
+    <card title="Ledger">Design system and dashboard for a fintech scale-up.</card>
+  </grid>
+</section>
+<section id="services">
+  <h2>Services</h2>
+  <grid cols="3">
+    <card icon="pen-tool" title="Brand">Naming, identity, guidelines</card>
+    <card icon="layout" title="Product">UX, UI, prototypes</card>
+    <card icon="code" title="Build">Static sites and design systems</card>
+  </grid>
+</section>
+<section id="team">
+  <h2>Team</h2>
+  <p>A small studio of designers and engineers. Remote-first.</p>
+</section>
+<section id="contact">
+  <h2>Contact</h2>
+  <alert type="info">hello@north.studio</alert>
+</section>
+<footer>© North Studio. Built with Stack.</footer>
+</page>

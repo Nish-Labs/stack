@@ -1,0 +1,139 @@
+<page title="Stack templates" description="12 ready-to-use Stack templates: portfolio, blog, SaaS, link-in-bio, restaurant, resume and more." theme="midnight" favicon="/logo.svg">
+
+<style>
+.tpl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.35rem;margin-top:1.5rem}
+.tpl-card{border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:var(--surface);display:flex;flex-direction:column}
+.tpl-card:hover{border-color:var(--accent)}
+.tpl-preview{padding:1.4rem 1.25rem;background:var(--bg);border-bottom:1px solid var(--border);min-height:7.5rem}
+.tpl-preview h3{margin:0 0 .4rem;font-size:1.15rem}
+.tpl-preview p{margin:0;color:var(--muted);font-size:.9rem}
+.tpl-body{padding:1.1rem 1.25rem 1.3rem;flex:1;display:flex;flex-direction:column;gap:.75rem}
+.tpl-cmd{font:500 .8rem var(--mono-font);background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:.55rem .75rem;overflow-x:auto}
+.tpl-actions{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:auto}
+</style>
+
+<navbar brand="Stack" icon="layers" links="Home:/, Templates:/templates, Themes:/themes, Docs:/docs">
+  <themeswitch />
+</navbar>
+
+<section>
+  <p class="muted" style="margin:0 0 .35rem;font-size:.8rem;text-transform:uppercase;letter-spacing:.08em">Gallery</p>
+  <h1>12 templates, ready to ship</h1>
+  <p class="lead">Each template is a complete multi-section page. Open a live preview, copy the source, or scaffold with the CLI.</p>
+
+  <div class="tpl-grid">
+    <div class="tpl-card">
+      <div class="tpl-preview"><h3>Portfolio</h3><p>Projects grid, about, contact. Clean and work-focused.</p></div>
+      <div class="tpl-body">
+        <div class="tpl-cmd">stk new my-site --template portfolio</div>
+        <div class="tpl-actions">
+          <button href="/templates/portfolio" size="sm" icon="eye">Live preview</button>
+        </div>
+      </div>
+    </div>
+    <div class="tpl-card">
+      <div class="tpl-preview"><h3>Blog</h3><p>Post list, featured article, tags and archive feel.</p></div>
+      <div class="tpl-body">
+        <div class="tpl-cmd">stk new my-site --template blog</div>
+        <div class="tpl-actions">
+          <button href="/templates/blog" size="sm" icon="eye">Live preview</button>
+        </div>
+      </div>
+    </div>
+    <div class="tpl-card">
+      <div class="tpl-preview"><h3>SaaS</h3><p>Hero, features, pricing tiers, FAQ and CTA.</p></div>
+      <div class="tpl-body">
+        <div class="tpl-cmd">stk new my-site --template saas</div>
+        <div class="tpl-actions">
+          <button href="/templates/saas" size="sm" icon="eye">Live preview</button>
+        </div>
+      </div>
+    </div>
+    <div class="tpl-card">
+      <div class="tpl-preview"><h3>Link in bio</h3><p>Single-column profile + link buttons. Perfect for socials.</p></div>
+      <div class="tpl-body">
+        <div class="tpl-cmd">stk new my-site --template link-in-bio</div>
+        <div class="tpl-actions">
+          <button href="/templates/link-in-bio" size="sm" icon="eye">Live preview</button>
+        </div>
+      </div>
+    </div>
+    <div class="tpl-card">
+      <div class="tpl-preview"><h3>Restaurant</h3><p>Menu highlights, hours, location and reservation CTA.</p></div>
+      <div class="tpl-body">
+        <div class="tpl-cmd">stk new my-site --template restaurant</div>
+        <div class="tpl-actions">
+          <button href="/templates/restaurant" size="sm" icon="eye">Live preview</button>
+        </div>
+      </div>
+    </div>
+    <div class="tpl-card">
+      <div class="tpl-preview"><h3>Resume</h3><p>Experience timeline, skills, education and download link.</p></div>
+      <div class="tpl-body">
+        <div class="tpl-cmd">stk new my-site --template resume</div>
+        <div class="tpl-actions">
+          <button href="/templates/resume" size="sm" icon="eye">Live preview</button>
+        </div>
+      </div>
+    </div>
+    <div class="tpl-card">
+      <div class="tpl-preview"><h3>Changelog</h3><p>Versioned release notes with badges and dates.</p></div>
+      <div class="tpl-body">
+        <div class="tpl-cmd">stk new my-site --template changelog</div>
+        <div class="tpl-actions">
+          <button href="/templates/changelog" size="sm" icon="eye">Live preview</button>
+        </div>
+      </div>
+    </div>
+    <div class="tpl-card">
+      <div class="tpl-preview"><h3>Event</h3><p>Date, speakers, schedule and ticket CTA.</p></div>
+      <div class="tpl-body">
+        <div class="tpl-cmd">stk new my-site --template event</div>
+        <div class="tpl-actions">
+          <button href="/templates/event" size="sm" icon="eye">Live preview</button>
+        </div>
+      </div>
+    </div>
+    <div class="tpl-card">
+      <div class="tpl-preview"><h3>Docs hub</h3><p>Sidebar-style overview, quick links and search placeholder.</p></div>
+      <div class="tpl-body">
+        <div class="tpl-cmd">stk new my-site --template docs-hub</div>
+        <div class="tpl-actions">
+          <button href="/templates/docs-hub" size="sm" icon="eye">Live preview</button>
+        </div>
+      </div>
+    </div>
+    <div class="tpl-card">
+      <div class="tpl-preview"><h3>Agency</h3><p>Services, case studies, team and contact form area.</p></div>
+      <div class="tpl-body">
+        <div class="tpl-cmd">stk new my-site --template agency</div>
+        <div class="tpl-actions">
+          <button href="/templates/agency" size="sm" icon="eye">Live preview</button>
+        </div>
+      </div>
+    </div>
+    <div class="tpl-card">
+      <div class="tpl-preview"><h3>Newsletter</h3><p>Issue archive, subscribe form and featured posts.</p></div>
+      <div class="tpl-body">
+        <div class="tpl-cmd">stk new my-site --template newsletter</div>
+        <div class="tpl-actions">
+          <button href="/templates/newsletter" size="sm" icon="eye">Live preview</button>
+        </div>
+      </div>
+    </div>
+    <div class="tpl-card">
+      <div class="tpl-preview"><h3>Personal</h3><p>Minimal about page with links, notes and a short bio.</p></div>
+      <div class="tpl-body">
+        <div class="tpl-cmd">stk new my-site --template personal</div>
+        <div class="tpl-actions">
+          <button href="/templates/personal" size="sm" icon="eye">Live preview</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer github="NishantGits">
+  © Stack. Built by NishantGits.
+</footer>
+</page>

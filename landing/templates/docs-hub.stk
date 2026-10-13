@@ -1,0 +1,43 @@
+<page title="Docs hub — Stack template" theme="midnight" favicon="/logo.svg">
+<style>
+.hub{display:grid;grid-template-columns:200px minmax(0,1fr);gap:2.5rem;padding-top:1.5rem}
+.hub-side a{display:block;padding:.3rem 0;color:var(--muted);text-decoration:none}
+.hub-side a:hover{color:var(--accent)}
+@media(max-width:800px){.hub{grid-template-columns:1fr}}
+</style>
+<navbar brand="Docs" icon="book-open" links="Guides:#guides, API:#api, Reference:#ref">
+  <themeswitch />
+</navbar>
+<section class="hub">
+  <nav class="hub-side">
+    <a href="#guides">Guides</a>
+    <a href="#api">API</a>
+    <a href="#ref">Reference</a>
+  </nav>
+  <div>
+    <h1>Documentation</h1>
+    <p class="lead">Everything you need to integrate and ship.</p>
+    <section id="guides">
+      <h2>Guides</h2>
+      <grid cols="2">
+        <card icon="rocket" title="Quick start" href="#">Up and running in five minutes.</card>
+        <card icon="key" title="Auth" href="#">API keys and OAuth.</card>
+      </grid>
+    </section>
+    <section id="api">
+      <h2>API</h2>
+      <alert type="info">REST and webhooks. Base URL: <code>https://api.example.com</code></alert>
+    </section>
+    <section id="ref">
+      <h2>Reference</h2>
+      <md>
+| Endpoint | Method | Description |
+|---|---|---|
+| `/v1/items` | GET | List items |
+| `/v1/items` | POST | Create item |
+      </md>
+    </section>
+  </div>
+</section>
+<footer>Built with Stack.</footer>
+</page>

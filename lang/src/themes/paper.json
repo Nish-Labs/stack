@@ -1,0 +1,26 @@
+{
+  "label": "Paper",
+  "scheme": "light",
+  "fonts": [
+    "Bricolage Grotesque:wght@500;600;700;800",
+    "Instrument Sans:wght@400;500;600;700",
+    "Newsreader:wght@500;600",
+    "JetBrains Mono:wght@400;500;700"
+  ],
+  "vars": {
+    "bg": "#faf6ef",
+    "surface": "#fffdf8",
+    "surface-2": "#f2ebdd",
+    "border": "#e2d8c5",
+    "text": "#211c15",
+    "muted": "#6e6455",
+    "accent": "#a5470f",
+    "accent-2": "#8c1d3f",
+    "accent-text": "#fffaf2",
+    "radius": "6px",
+    "shadow": "0 14px 34px -20px rgba(20,24,40,.25)",
+    "font": "'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif",
+    "heading-font": "'Newsreader',Georgia,serif",
+    "mono-font": "'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace"
+  }
+}

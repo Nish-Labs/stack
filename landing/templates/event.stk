@@ -1,0 +1,32 @@
+<page title="Event — Stack template" theme="rose" favicon="/logo.svg">
+<navbar brand="Build Week" icon="calendar" links="Schedule:#schedule, Speakers:#speakers" cta="Get tickets:#tickets">
+  <themeswitch />
+</navbar>
+<hero>
+  <badge>Nov 14–15 · Lisbon</badge>
+  <h1>Two days of shipping together</h1>
+  <p class="lead">Talks in the morning, builds in the afternoon. Bring a laptop.</p>
+  <button href="#tickets" icon="ticket">Get tickets</button>
+</hero>
+<section id="schedule">
+  <h2>Schedule</h2>
+  <grid cols="2">
+    <card title="Day 1">Keynotes · workshops · open build</card>
+    <card title="Day 2">Lightning talks · demos · wrap party</card>
+  </grid>
+</section>
+<section id="speakers">
+  <h2>Speakers</h2>
+  <grid cols="3">
+    <card title="Sam Ortiz">Design systems at scale</card>
+    <card title="Riley Park">Static-first architecture</card>
+    <card title="Nova Kim">DX that ships</card>
+  </grid>
+</section>
+<section id="tickets">
+  <h2>Tickets</h2>
+  <alert type="success">Early bird open until Oct 31.</alert>
+  <button icon="arrow-right">Buy ticket</button>
+</section>
+<footer>© Build Week. Built with Stack.</footer>
+</page>

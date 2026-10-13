@@ -1,0 +1,31 @@
+<page title="Blog — Stack template" theme="paper" favicon="/logo.svg">
+<navbar brand="Notes" icon="book-open" links="Home:/templates/blog, Archive:#archive" cta="Subscribe:#subscribe">
+  <themeswitch />
+</navbar>
+<hero>
+  <badge icon="sparkles">New</badge>
+  <h1>Writing about tools, craft and small bets</h1>
+  <p class="lead">Short essays and notes. No growth hacks.</p>
+</hero>
+<section>
+  <h2>Latest</h2>
+  <grid cols="1">
+    <card title="Why one-file sites still win" href="#">A case for keeping the surface area tiny when you just need a page.</card>
+    <card title="Theme systems without a design system" href="#">CSS variables, restraint, and ten good defaults.</card>
+    <card title="Shipping static in 2026" href="#">What still matters when everything can be a framework.</card>
+  </grid>
+</section>
+<section id="archive">
+  <h2>Archive</h2>
+  <md>
+- **Mar 2026** — Why one-file sites still win
+- **Feb 2026** — Theme systems without a design system
+- **Jan 2026** — Shipping static in 2026
+  </md>
+</section>
+<section id="subscribe">
+  <h2>Subscribe</h2>
+  <alert type="success">No form spam — drop your email in the real version.</alert>
+</section>
+<footer>© Notes. Built with Stack.</footer>
+</page>

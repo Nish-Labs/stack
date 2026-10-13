@@ -1,0 +1,25 @@
+{
+  "label": "Dracula",
+  "scheme": "dark",
+  "fonts": [
+    "Bricolage Grotesque:wght@500;600;700;800",
+    "Instrument Sans:wght@400;500;600;700",
+    "JetBrains Mono:wght@400;500;700"
+  ],
+  "vars": {
+    "bg": "#1d1e28",
+    "surface": "#282a36",
+    "surface-2": "#343746",
+    "border": "#464a62",
+    "text": "#f8f8f2",
+    "muted": "#a3acd0",
+    "accent": "#bd93f9",
+    "accent-2": "#ff79c6",
+    "accent-text": "#1d1e28",
+    "radius": "10px",
+    "shadow": "0 18px 40px -22px rgba(0,0,0,.8)",
+    "font": "'Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif",
+    "heading-font": "'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace",
+    "mono-font": "'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace"
+  }
+}

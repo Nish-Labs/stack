@@ -1,0 +1,30 @@
+<page title="Changelog — Stack template" theme="forest" favicon="/logo.svg">
+<navbar brand="Changelog" icon="scroll-text" links="Latest:#latest, Archive:#archive">
+  <themeswitch />
+</navbar>
+<section id="latest">
+  <h1>Changelog</h1>
+  <p class="lead">Product updates, fixes and experiments.</p>
+  <card title="v2.4.0 · Oct 2026">
+    <badge icon="sparkles">New</badge>
+    <p>Template gallery, themes page, and multi-file landing.</p>
+  </card>
+  <card title="v2.3.0 · Sep 2026">
+    <badge>Improved</badge>
+    <p>Faster builds and clearer CLI errors.</p>
+  </card>
+  <card title="v2.2.0 · Aug 2026">
+    <badge>Fixed</badge>
+    <p>Theme switcher persistence across pages.</p>
+  </card>
+</section>
+<section id="archive">
+  <h2>Earlier</h2>
+  <md>
+- v2.1 — Markdown copy buttons
+- v2.0 — Ten themes
+- v1.0 — First public release
+  </md>
+</section>
+<footer>Built with Stack.</footer>
+</page>

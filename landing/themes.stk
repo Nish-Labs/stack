@@ -1,0 +1,74 @@
+<page title="Stack themes" description="All ten built-in Stack themes shown live. Switch and compare." theme="midnight" favicon="/logo.svg">
+
+<style>
+.theme-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.25rem;margin-top:1.5rem}
+.theme-card{border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:var(--surface);transition:border-color .15s,box-shadow .15s}
+.theme-card:hover{border-color:var(--accent);box-shadow:var(--shadow)}
+.theme-swatch{height:4.5rem;display:flex}
+.theme-swatch span{flex:1}
+.theme-body{padding:1.1rem 1.2rem 1.25rem}
+.theme-body h3{margin:0 0 .25rem;font-size:1.1rem}
+.theme-body p{margin:0 0 .9rem;color:var(--muted);font-size:.9rem}
+.theme-meta{display:flex;flex-wrap:wrap;gap:.35rem;font-size:.78rem;color:var(--muted)}
+.theme-meta code{font-size:.78rem}
+</style>
+
+<navbar brand="Stack" icon="layers" links="Home:/, Templates:/templates, Themes:/themes, Docs:/docs">
+  <themeswitch />
+</navbar>
+
+<section>
+  <p class="muted" style="margin:0 0 .35rem;font-size:.8rem;text-transform:uppercase;letter-spacing:.08em">Themes</p>
+  <h1>Ten themes. One attribute.</h1>
+  <p class="lead">Set <code>theme="ocean"</code> on any page, or use the picker in the navbar. Every theme ships with distinctive fonts and contrast-checked colors.</p>
+
+  <div class="theme-grid">
+    <div class="theme-card">
+      <div class="theme-swatch"><span style="background:#0b1020"></span><span style="background:#131a2b"></span><span style="background:#5eb8ff"></span><span style="background:#e8eef9"></span></div>
+      <div class="theme-body"><h3>Midnight</h3><p>Default dark. Cool blues and sharp contrast.</p><div class="theme-meta"><badge>dark</badge><code>theme="midnight"</code></div></div>
+    </div>
+    <div class="theme-card">
+      <div class="theme-swatch"><span style="background:#f6f8fc"></span><span style="background:#ffffff"></span><span style="background:#2358e6"></span><span style="background:#0f1a2e"></span></div>
+      <div class="theme-body"><h3>Daylight</h3><p>Clean light UI with strong blue accent.</p><div class="theme-meta"><badge>light</badge><code>theme="daylight"</code></div></div>
+    </div>
+    <div class="theme-card">
+      <div class="theme-swatch"><span style="background:#f7f1e8"></span><span style="background:#fffaf3"></span><span style="background:#a5470f"></span><span style="background:#2a1a0c"></span></div>
+      <div class="theme-body"><h3>Paper</h3><p>Warm paper feel, serif-friendly headings.</p><div class="theme-meta"><badge>light</badge><code>theme="paper"</code></div></div>
+    </div>
+    <div class="theme-card">
+      <div class="theme-swatch"><span style="background:#0a0612"></span><span style="background:#140c22"></span><span style="background:#ff3df2"></span><span style="background:#f5e9ff"></span></div>
+      <div class="theme-body"><h3>Neon</h3><p>High-energy magenta on near-black.</p><div class="theme-meta"><badge>dark</badge><code>theme="neon"</code></div></div>
+    </div>
+    <div class="theme-card">
+      <div class="theme-swatch"><span style="background:#06141c"></span><span style="background:#0c1f2a"></span><span style="background:#22d3ee"></span><span style="background:#e0f7fa"></span></div>
+      <div class="theme-body"><h3>Ocean</h3><p>Deep teal waters and cyan highlights.</p><div class="theme-meta"><badge>dark</badge><code>theme="ocean"</code></div></div>
+    </div>
+    <div class="theme-card">
+      <div class="theme-swatch"><span style="background:#08140e"></span><span style="background:#0e1f16"></span><span style="background:#3ddc97"></span><span style="background:#e7f4ea"></span></div>
+      <div class="theme-body"><h3>Forest</h3><p>Moss and leaf greens, calm dark base.</p><div class="theme-meta"><badge>dark</badge><code>theme="forest"</code></div></div>
+    </div>
+    <div class="theme-card">
+      <div class="theme-swatch"><span style="background:#1a0f0a"></span><span style="background:#2a1810"></span><span style="background:#ff9142"></span><span style="background:#fff0e6"></span></div>
+      <div class="theme-body"><h3>Sunset</h3><p>Warm orange glow against deep brown.</p><div class="theme-meta"><badge>dark</badge><code>theme="sunset"</code></div></div>
+    </div>
+    <div class="theme-card">
+      <div class="theme-swatch"><span style="background:#1a0a10"></span><span style="background:#2a1018"></span><span style="background:#e11d48"></span><span style="background:#ffe4e9"></span></div>
+      <div class="theme-body"><h3>Rose</h3><p>Bold rose accent on soft dark crimson.</p><div class="theme-meta"><badge>dark</badge><code>theme="rose"</code></div></div>
+    </div>
+    <div class="theme-card">
+      <div class="theme-swatch"><span style="background:#1d1e28"></span><span style="background:#282a36"></span><span style="background:#bd93f9"></span><span style="background:#f8f8f2"></span></div>
+      <div class="theme-body"><h3>Dracula</h3><p>Classic purple-pink on the familiar palette.</p><div class="theme-meta"><badge>dark</badge><code>theme="dracula"</code></div></div>
+    </div>
+    <div class="theme-card">
+      <div class="theme-swatch"><span style="background:#2e3440"></span><span style="background:#3b4252"></span><span style="background:#88c0d0"></span><span style="background:#eceff4"></span></div>
+      <div class="theme-body"><h3>Nord</h3><p>Arctic blues and soft neutrals.</p><div class="theme-meta"><badge>dark</badge><code>theme="nord"</code></div></div>
+    </div>
+  </div>
+
+  <alert type="info" style="margin-top:2rem">Use the theme switcher in the navbar to apply any of these to the whole site right now.</alert>
+</section>
+
+<footer github="NishantGits">
+  © Stack. Built by NishantGits.
+</footer>
+</page>

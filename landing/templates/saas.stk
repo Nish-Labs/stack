@@ -1,0 +1,42 @@
+<page title="SaaS — Stack template" theme="daylight" favicon="/logo.svg">
+<navbar brand="Pulse" icon="activity" links="Features:#features, Pricing:#pricing, FAQ:#faq" cta="Start free:#cta">
+  <themeswitch />
+</navbar>
+<hero>
+  <h1>Ship product updates your team actually reads</h1>
+  <p class="lead">Pulse turns release notes into a living changelog your customers open every week.</p>
+  <div class="stk-row">
+    <button href="#cta" icon="rocket">Start free</button>
+    <button variant="secondary" href="#features" icon="play">See how it works</button>
+  </div>
+</hero>
+<section id="features">
+  <h2>Features</h2>
+  <grid cols="3">
+    <card icon="zap" title="Instant publish">Write once, push live in seconds.</card>
+    <card icon="users" title="Audience segments">Show the right notes to the right plan.</card>
+    <card icon="bar-chart-2" title="Read analytics">Know which updates land.</card>
+  </grid>
+</section>
+<section id="pricing">
+  <h2>Pricing</h2>
+  <grid cols="3">
+    <card title="Starter">$0 · 1 project · community support</card>
+    <card title="Team">$29/mo · unlimited projects · SSO</card>
+    <card title="Scale">Custom · SLA · dedicated success</card>
+  </grid>
+</section>
+<section id="faq">
+  <h2>FAQ</h2>
+  <md>
+**Can I import from Notion?** Yes — paste or connect via API.
+
+**Is there a free tier?** Forever, for one project.
+  </md>
+</section>
+<section id="cta">
+  <h2>Ready?</h2>
+  <button icon="arrow-right">Create your workspace</button>
+</section>
+<footer>© Pulse. Built with Stack.</footer>
+</page>
