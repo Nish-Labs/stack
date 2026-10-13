@@ -13,13 +13,14 @@
   <span class="muted">Template · Agency</span>
   <div class="stk-row">
     <button size="sm" variant="secondary" href="/templates" icon="arrow-left">Gallery</button>
-    <button size="sm" variant="secondary" icon="copy" on:click="navigator.clipboard.writeText('stk new my-site --template agency')">Copy CLI</button>
+    <button size="sm" variant="secondary" icon="copy" data-copy="stk new my-site --template agency">Copy CLI</button>
   </div>
 </div>
 <hero>
   <h1>Brand and product for ambitious teams</h1>
   <p class="lead">We partner on strategy, design and front-end delivery.</p>
   <button href="#contact" icon="mail">Start a project</button>
+  <img class="hero-office" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&amp;q=80" alt="Team" style="width:100%;max-height:340px;object-fit:cover;border-radius:var(--radius);margin-top:1.5rem" />
 </hero>
 <section id="work">
   <h2>Selected work</h2>

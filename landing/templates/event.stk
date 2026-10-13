@@ -12,7 +12,7 @@
   <span class="muted">Template · Event</span>
   <div class="stk-row">
     <button size="sm" variant="secondary" href="/templates" icon="arrow-left">Gallery</button>
-    <button size="sm" variant="secondary" icon="copy" on:click="navigator.clipboard.writeText('stk new my-site --template event')">Copy CLI</button>
+    <button size="sm" variant="secondary" icon="copy" data-copy="stk new my-site --template event">Copy CLI</button>
   </div>
 </div>
 <hero>
@@ -47,6 +47,13 @@
       <h3>Nova Kim</h3>
       <p class="muted">DX that ships</p>
     </div>
+  </grid>
+</section>
+<section>
+  <h2>The venue</h2>
+  <grid cols="2">
+    <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&amp;q=80" alt="Venue" style="width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:var(--radius)" loading="lazy" />
+    <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&amp;q=80" alt="Stage" style="width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:var(--radius)" loading="lazy" />
   </grid>
 </section>
 <section id="tickets">

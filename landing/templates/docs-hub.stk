@@ -14,7 +14,7 @@
   <span class="muted">Template · Docs hub</span>
   <div class="stk-row">
     <button size="sm" variant="secondary" href="/templates" icon="arrow-left">Gallery</button>
-    <button size="sm" variant="secondary" icon="copy" on:click="navigator.clipboard.writeText('stk new my-site --template docs-hub')">Copy CLI</button>
+    <button size="sm" variant="secondary" icon="copy" data-copy="stk new my-site --template docs-hub">Copy CLI</button>
   </div>
 </div>
 <section class="hub">

@@ -177,3 +177,4 @@ i.stk-icon:empty{display:inline-block}
 }
 @media(max-width:600px){.stk-grid{grid-template-columns:minmax(0,1fr)!important}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+.stk-btn.is-copied,.stk-copy.is-copied{color:#22c55e!important;border-color:#22c55e!important}
