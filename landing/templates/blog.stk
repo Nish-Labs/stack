@@ -1,18 +1,54 @@
-<page title="Blog — Stack template" theme="paper" favicon="/logo.svg">
-<navbar brand="Notes" icon="book-open" links="Home:/templates/blog, Archive:#archive" cta="Subscribe:#subscribe">
+<page title="Notes — Blog" description="Writing about tools, craft and small bets" theme="paper" favicon="/logo.svg">
+<style>
+.feat{display:grid;grid-template-columns:1.2fr 1fr;gap:1.5rem;align-items:center;margin-bottom:2.5rem;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:var(--surface)}
+.feat img{width:100%;height:100%;min-height:220px;object-fit:cover}
+.feat .txt{padding:1.5rem}
+.post img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:calc(var(--radius) - 4px);margin-bottom:.85rem}
+.bar{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;justify-content:space-between;padding:.75rem 0;border-bottom:1px solid var(--border);margin-bottom:1rem;font-size:.88rem}
+@media(max-width:800px){.feat{grid-template-columns:1fr}}
+</style>
+<navbar brand="Notes" icon="book-open" links="Latest:#latest, Archive:#archive" cta="Subscribe:#subscribe">
   <themeswitch />
 </navbar>
+<div class="bar">
+  <span class="muted">Template · Blog</span>
+  <div class="stk-row">
+    <button size="sm" variant="secondary" href="/templates" icon="arrow-left">Gallery</button>
+    <button size="sm" variant="secondary" icon="copy" on:click="navigator.clipboard.writeText('stk new my-site --template blog')">Copy CLI</button>
+  </div>
+</div>
 <hero>
-  <badge icon="sparkles">New</badge>
+  <badge icon="sparkles">New issue</badge>
   <h1>Writing about tools, craft and small bets</h1>
-  <p class="lead">Short essays and notes. No growth hacks.</p>
+  <p class="lead">Short essays. No growth hacks.</p>
 </hero>
-<section>
+<section id="latest">
+  <div class="feat">
+    <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=900&amp;q=80" alt="Featured" />
+    <div class="txt">
+      <badge>Featured</badge>
+      <h2 style="font-size:1.6rem;margin:.4rem 0">Why one-file sites still win</h2>
+      <p class="muted">A case for keeping surface area tiny when you just need a page.</p>
+      <button href="#" size="sm" variant="secondary">Read article</button>
+    </div>
+  </div>
   <h2>Latest</h2>
-  <grid cols="1">
-    <card title="Why one-file sites still win" href="#">A case for keeping the surface area tiny when you just need a page.</card>
-    <card title="Theme systems without a design system" href="#">CSS variables, restraint, and ten good defaults.</card>
-    <card title="Shipping static in 2026" href="#">What still matters when everything can be a framework.</card>
+  <grid cols="3">
+    <div class="post">
+      <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&amp;q=80" alt="" loading="lazy" />
+      <h3>Theme systems without a design system</h3>
+      <p class="muted">CSS variables, restraint, and ten good defaults.</p>
+    </div>
+    <div class="post">
+      <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&amp;q=80" alt="" loading="lazy" />
+      <h3>Shipping static in 2026</h3>
+      <p class="muted">What still matters when everything can be a framework.</p>
+    </div>
+    <div class="post">
+      <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&amp;q=80" alt="" loading="lazy" />
+      <h3>Delete more</h3>
+      <p class="muted">Why removing features can increase retention.</p>
+    </div>
   </grid>
 </section>
 <section id="archive">
@@ -25,7 +61,7 @@
 </section>
 <section id="subscribe">
   <h2>Subscribe</h2>
-  <alert type="success">No form spam — drop your email in the real version.</alert>
+  <alert type="success">No spam. One note when something is worth sending.</alert>
 </section>
 <footer>© Notes. Built with Stack.</footer>
 </page>

@@ -1,32 +1,65 @@
-<page title="Restaurant — Stack template" theme="sunset" favicon="/logo.svg">
-<navbar brand="Olive &amp; Thyme" icon="utensils" links="Menu:#menu, Hours:#hours, Visit:#visit" cta="Reserve:#visit">
+<page title="Olive &amp; Thyme" theme="sunset" favicon="/logo.svg">
+<style>
+.hero-img{width:100%;max-height:380px;object-fit:cover;border-radius:var(--radius);margin-top:1.25rem}
+.dish{overflow:hidden;padding:0!important}
+.dish img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.dish .body{padding:1rem 1.15rem 1.25rem}
+.bar{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;justify-content:space-between;padding:.75rem 0;border-bottom:1px solid var(--border);margin-bottom:1rem;font-size:.88rem}
+</style>
+<navbar brand="Olive &amp; Thyme" icon="utensils" links="Menu:#menu, Gallery:#gallery, Visit:#visit" cta="Reserve:#visit">
   <themeswitch />
 </navbar>
+<div class="bar">
+  <span class="muted">Template · Restaurant</span>
+  <div class="stk-row">
+    <button size="sm" variant="secondary" href="/templates" icon="arrow-left">Gallery</button>
+    <button size="sm" variant="secondary" icon="copy" on:click="navigator.clipboard.writeText('stk new my-site --template restaurant')">Copy CLI</button>
+  </div>
+</div>
 <hero>
   <h1>Seasonal cooking, open kitchen</h1>
   <p class="lead">Wood-fired plates and a short wine list in the heart of the city.</p>
   <button href="#visit" icon="calendar">Reserve a table</button>
+  <img class="hero-img" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&amp;q=80" alt="Dining room" />
 </hero>
 <section id="menu">
   <h2>Tonight</h2>
   <grid cols="2">
-    <card title="Charred leeks">Hazelnut romesco · $14</card>
-    <card title="Duck confit">Cherry gastrique · $28</card>
-    <card title="House sourdough">Cultured butter · $8</card>
-    <card title="Citrus olive oil cake">Yogurt cream · $12</card>
+    <div class="stk-card dish">
+      <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=700&amp;q=80" alt="Salad" loading="lazy" />
+      <div class="body"><h3>Charred leeks</h3><p>Hazelnut romesco · $14</p></div>
+    </div>
+    <div class="stk-card dish">
+      <img src="https://images.unsplash.com/photo-1432139555190-58524dae6a55?w=700&amp;q=80" alt="Main" loading="lazy" />
+      <div class="body"><h3>Duck confit</h3><p>Cherry gastrique · $28</p></div>
+    </div>
+    <div class="stk-card dish">
+      <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=700&amp;q=80" alt="Bread" loading="lazy" />
+      <div class="body"><h3>House sourdough</h3><p>Cultured butter · $8</p></div>
+    </div>
+    <div class="stk-card dish">
+      <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=700&amp;q=80" alt="Dessert" loading="lazy" />
+      <div class="body"><h3>Citrus olive oil cake</h3><p>Yogurt cream · $12</p></div>
+    </div>
   </grid>
 </section>
-<section id="hours">
-  <h2>Hours</h2>
-  <md>
-**Tue–Thu** 17:00–22:00  
-**Fri–Sat** 17:00–23:00  
-**Sun–Mon** closed
-  </md>
+<section id="gallery">
+  <h2>The room</h2>
+  <grid cols="3">
+    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&amp;q=80" alt="" style="border-radius:var(--radius);width:100%;aspect-ratio:1;object-fit:cover" loading="lazy" />
+    <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&amp;q=80" alt="" style="border-radius:var(--radius);width:100%;aspect-ratio:1;object-fit:cover" loading="lazy" />
+    <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?w=600&amp;q=80" alt="" style="border-radius:var(--radius);width:100%;aspect-ratio:1;object-fit:cover" loading="lazy" />
+  </grid>
 </section>
 <section id="visit">
   <h2>Visit</h2>
-  <alert type="info">12 Market Street · call +1 555 0142 or book online.</alert>
+  <md>
+**Hours** Tue–Thu 17:00–22:00 · Fri–Sat 17:00–23:00 · Sun–Mon closed
+
+**Address** 12 Market Street
+  </md>
+  <alert type="info">Call +1 555 0142 or book online.</alert>
+  <button icon="calendar">Reserve</button>
 </section>
 <footer>© Olive &amp; Thyme. Built with Stack.</footer>
 </page>

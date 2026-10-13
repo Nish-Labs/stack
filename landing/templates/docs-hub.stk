@@ -1,13 +1,22 @@
-<page title="Docs hub — Stack template" theme="midnight" favicon="/logo.svg">
+<page title="Docs hub" theme="midnight" favicon="/logo.svg">
 <style>
-.hub{display:grid;grid-template-columns:200px minmax(0,1fr);gap:2.5rem;padding-top:1.5rem}
-.hub-side a{display:block;padding:.3rem 0;color:var(--muted);text-decoration:none}
-.hub-side a:hover{color:var(--accent)}
+.hub{display:grid;grid-template-columns:200px minmax(0,1fr);gap:2.5rem;padding-top:1rem}
+.hub-side a{display:block;padding:.35rem 0;color:var(--muted)!important;text-decoration:none}
+.hub-side a:hover{color:var(--accent)!important}
+.guide img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:calc(var(--radius) - 4px);margin-bottom:.75rem}
+.bar{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;justify-content:space-between;padding:.75rem 0;border-bottom:1px solid var(--border);margin-bottom:1rem;font-size:.88rem}
 @media(max-width:800px){.hub{grid-template-columns:1fr}}
 </style>
 <navbar brand="Docs" icon="book-open" links="Guides:#guides, API:#api, Reference:#ref">
   <themeswitch />
 </navbar>
+<div class="bar">
+  <span class="muted">Template · Docs hub</span>
+  <div class="stk-row">
+    <button size="sm" variant="secondary" href="/templates" icon="arrow-left">Gallery</button>
+    <button size="sm" variant="secondary" icon="copy" on:click="navigator.clipboard.writeText('stk new my-site --template docs-hub')">Copy CLI</button>
+  </div>
+</div>
 <section class="hub">
   <nav class="hub-side">
     <a href="#guides">Guides</a>
@@ -20,8 +29,16 @@
     <section id="guides">
       <h2>Guides</h2>
       <grid cols="2">
-        <card icon="rocket" title="Quick start" href="#">Up and running in five minutes.</card>
-        <card icon="key" title="Auth" href="#">API keys and OAuth.</card>
+        <div class="stk-card guide">
+          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&amp;q=80" alt="" loading="lazy" />
+          <h3>Quick start</h3>
+          <p class="muted">Up and running in five minutes.</p>
+        </div>
+        <div class="stk-card guide">
+          <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&amp;q=80" alt="" loading="lazy" />
+          <h3>Authentication</h3>
+          <p class="muted">API keys and OAuth flows.</p>
+        </div>
       </grid>
     </section>
     <section id="api">

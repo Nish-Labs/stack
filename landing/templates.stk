@@ -1,139 +1,218 @@
-<page title="Stack templates" description="12 ready-to-use Stack templates: portfolio, blog, SaaS, link-in-bio, restaurant, resume and more." theme="midnight" favicon="/logo.svg">
+<page title="Stack templates" description="12 ready-to-use Stack templates with real layouts and images." theme="midnight" favicon="/logo.svg">
 
 <style>
-.tpl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.35rem;margin-top:1.5rem}
-.tpl-card{border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:var(--surface);display:flex;flex-direction:column}
-.tpl-card:hover{border-color:var(--accent)}
-.tpl-preview{padding:1.4rem 1.25rem;background:var(--bg);border-bottom:1px solid var(--border);min-height:7.5rem}
-.tpl-preview h3{margin:0 0 .4rem;font-size:1.15rem}
-.tpl-preview p{margin:0;color:var(--muted);font-size:.9rem}
-.tpl-body{padding:1.1rem 1.25rem 1.3rem;flex:1;display:flex;flex-direction:column;gap:.75rem}
-.tpl-cmd{font:500 .8rem var(--mono-font);background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:.55rem .75rem;overflow-x:auto}
-.tpl-actions{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:auto}
+.tpl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.5rem;margin-top:1.75rem}
+.tpl-card{border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:var(--surface);display:flex;flex-direction:column;transition:border-color .15s,box-shadow .15s}
+.tpl-card:hover{border-color:var(--accent);box-shadow:var(--shadow)}
+.tpl-img{aspect-ratio:16/10;overflow:hidden;background:var(--surface-2)}
+.tpl-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s}
+.tpl-card:hover .tpl-img img{transform:scale(1.04)}
+.tpl-body{padding:1.15rem 1.25rem 1.35rem;flex:1;display:flex;flex-direction:column;gap:.7rem}
+.tpl-body h3{margin:0;font-size:1.12rem}
+.tpl-body p{margin:0;color:var(--muted);font-size:.9rem;line-height:1.45}
+.tpl-cmd-row{display:flex;gap:.4rem;align-items:stretch}
+.tpl-cmd{flex:1;font:500 .78rem var(--mono-font);background:var(--surface-2);border:1px solid var(--border);border-radius:8px;padding:.55rem .7rem;overflow-x:auto;white-space:nowrap}
+.tpl-actions{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.15rem}
+.copy-ok{color:#22c55e!important}
 </style>
 
 <navbar brand="Stack" icon="layers" links="Home:/, Templates:/templates, Themes:/themes, Docs:/docs">
   <themeswitch />
 </navbar>
 
+<state copied="" />
+
 <section>
   <p class="muted" style="margin:0 0 .35rem;font-size:.8rem;text-transform:uppercase;letter-spacing:.08em">Gallery</p>
   <h1>12 templates, ready to ship</h1>
-  <p class="lead">Each template is a complete multi-section page. Open a live preview, copy the source, or scaffold with the CLI.</p>
+  <p class="lead">Full layouts with images. Preview live, copy the CLI command, or open the source page.</p>
 
   <div class="tpl-grid">
+
     <div class="tpl-card">
-      <div class="tpl-preview"><h3>Portfolio</h3><p>Projects grid, about, contact. Clean and work-focused.</p></div>
+      <a class="tpl-img" href="/templates/portfolio"><img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&amp;q=80" alt="Portfolio preview" loading="lazy" /></a>
       <div class="tpl-body">
-        <div class="tpl-cmd">stk new my-site --template portfolio</div>
+        <h3>Portfolio</h3>
+        <p>Project grid, case studies, about and contact.</p>
+        <div class="tpl-cmd-row">
+          <code class="tpl-cmd" id="cmd-portfolio">stk new my-site --template portfolio</code>
+          <button size="sm" variant="secondary" icon="copy" on:click="navigator.clipboard.writeText(document.getElementById('cmd-portfolio').textContent);copied='portfolio'">Copy</button>
+        </div>
         <div class="tpl-actions">
           <button href="/templates/portfolio" size="sm" icon="eye">Live preview</button>
         </div>
       </div>
     </div>
+
     <div class="tpl-card">
-      <div class="tpl-preview"><h3>Blog</h3><p>Post list, featured article, tags and archive feel.</p></div>
+      <a class="tpl-img" href="/templates/blog"><img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&amp;q=80" alt="Blog preview" loading="lazy" /></a>
       <div class="tpl-body">
-        <div class="tpl-cmd">stk new my-site --template blog</div>
+        <h3>Blog</h3>
+        <p>Featured post, article grid and archive.</p>
+        <div class="tpl-cmd-row">
+          <code class="tpl-cmd" id="cmd-blog">stk new my-site --template blog</code>
+          <button size="sm" variant="secondary" icon="copy" on:click="navigator.clipboard.writeText(document.getElementById('cmd-blog').textContent);copied='blog'">Copy</button>
+        </div>
         <div class="tpl-actions">
           <button href="/templates/blog" size="sm" icon="eye">Live preview</button>
         </div>
       </div>
     </div>
+
     <div class="tpl-card">
-      <div class="tpl-preview"><h3>SaaS</h3><p>Hero, features, pricing tiers, FAQ and CTA.</p></div>
+      <a class="tpl-img" href="/templates/saas"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&amp;q=80" alt="SaaS preview" loading="lazy" /></a>
       <div class="tpl-body">
-        <div class="tpl-cmd">stk new my-site --template saas</div>
+        <h3>SaaS</h3>
+        <p>Hero, features, pricing tiers and FAQ.</p>
+        <div class="tpl-cmd-row">
+          <code class="tpl-cmd" id="cmd-saas">stk new my-site --template saas</code>
+          <button size="sm" variant="secondary" icon="copy" on:click="navigator.clipboard.writeText(document.getElementById('cmd-saas').textContent);copied='saas'">Copy</button>
+        </div>
         <div class="tpl-actions">
           <button href="/templates/saas" size="sm" icon="eye">Live preview</button>
         </div>
       </div>
     </div>
+
     <div class="tpl-card">
-      <div class="tpl-preview"><h3>Link in bio</h3><p>Single-column profile + link buttons. Perfect for socials.</p></div>
+      <a class="tpl-img" href="/templates/link-in-bio"><img src="https://images.unsplash.com/photo-1611162617474-5b21e764f988?w=800&amp;q=80" alt="Link in bio preview" loading="lazy" /></a>
       <div class="tpl-body">
-        <div class="tpl-cmd">stk new my-site --template link-in-bio</div>
+        <h3>Link in bio</h3>
+        <p>Profile photo, social links and CTAs.</p>
+        <div class="tpl-cmd-row">
+          <code class="tpl-cmd" id="cmd-lib">stk new my-site --template link-in-bio</code>
+          <button size="sm" variant="secondary" icon="copy" on:click="navigator.clipboard.writeText(document.getElementById('cmd-lib').textContent);copied='lib'">Copy</button>
+        </div>
         <div class="tpl-actions">
           <button href="/templates/link-in-bio" size="sm" icon="eye">Live preview</button>
         </div>
       </div>
     </div>
+
     <div class="tpl-card">
-      <div class="tpl-preview"><h3>Restaurant</h3><p>Menu highlights, hours, location and reservation CTA.</p></div>
+      <a class="tpl-img" href="/templates/restaurant"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&amp;q=80" alt="Restaurant preview" loading="lazy" /></a>
       <div class="tpl-body">
-        <div class="tpl-cmd">stk new my-site --template restaurant</div>
+        <h3>Restaurant</h3>
+        <p>Menu, hours, gallery and reservations.</p>
+        <div class="tpl-cmd-row">
+          <code class="tpl-cmd" id="cmd-rest">stk new my-site --template restaurant</code>
+          <button size="sm" variant="secondary" icon="copy" on:click="navigator.clipboard.writeText(document.getElementById('cmd-rest').textContent);copied='rest'">Copy</button>
+        </div>
         <div class="tpl-actions">
           <button href="/templates/restaurant" size="sm" icon="eye">Live preview</button>
         </div>
       </div>
     </div>
+
     <div class="tpl-card">
-      <div class="tpl-preview"><h3>Resume</h3><p>Experience timeline, skills, education and download link.</p></div>
+      <a class="tpl-img" href="/templates/resume"><img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&amp;q=80" alt="Resume preview" loading="lazy" /></a>
       <div class="tpl-body">
-        <div class="tpl-cmd">stk new my-site --template resume</div>
+        <h3>Resume</h3>
+        <p>Experience, skills and education layout.</p>
+        <div class="tpl-cmd-row">
+          <code class="tpl-cmd" id="cmd-resume">stk new my-site --template resume</code>
+          <button size="sm" variant="secondary" icon="copy" on:click="navigator.clipboard.writeText(document.getElementById('cmd-resume').textContent);copied='resume'">Copy</button>
+        </div>
         <div class="tpl-actions">
           <button href="/templates/resume" size="sm" icon="eye">Live preview</button>
         </div>
       </div>
     </div>
+
     <div class="tpl-card">
-      <div class="tpl-preview"><h3>Changelog</h3><p>Versioned release notes with badges and dates.</p></div>
+      <a class="tpl-img" href="/templates/changelog"><img src="https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=800&amp;q=80" alt="Changelog preview" loading="lazy" /></a>
       <div class="tpl-body">
-        <div class="tpl-cmd">stk new my-site --template changelog</div>
+        <h3>Changelog</h3>
+        <p>Versioned release notes with badges.</p>
+        <div class="tpl-cmd-row">
+          <code class="tpl-cmd" id="cmd-cl">stk new my-site --template changelog</code>
+          <button size="sm" variant="secondary" icon="copy" on:click="navigator.clipboard.writeText(document.getElementById('cmd-cl').textContent);copied='cl'">Copy</button>
+        </div>
         <div class="tpl-actions">
           <button href="/templates/changelog" size="sm" icon="eye">Live preview</button>
         </div>
       </div>
     </div>
+
     <div class="tpl-card">
-      <div class="tpl-preview"><h3>Event</h3><p>Date, speakers, schedule and ticket CTA.</p></div>
+      <a class="tpl-img" href="/templates/event"><img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&amp;q=80" alt="Event preview" loading="lazy" /></a>
       <div class="tpl-body">
-        <div class="tpl-cmd">stk new my-site --template event</div>
+        <h3>Event</h3>
+        <p>Schedule, speakers and ticket CTA.</p>
+        <div class="tpl-cmd-row">
+          <code class="tpl-cmd" id="cmd-event">stk new my-site --template event</code>
+          <button size="sm" variant="secondary" icon="copy" on:click="navigator.clipboard.writeText(document.getElementById('cmd-event').textContent);copied='event'">Copy</button>
+        </div>
         <div class="tpl-actions">
           <button href="/templates/event" size="sm" icon="eye">Live preview</button>
         </div>
       </div>
     </div>
+
     <div class="tpl-card">
-      <div class="tpl-preview"><h3>Docs hub</h3><p>Sidebar-style overview, quick links and search placeholder.</p></div>
+      <a class="tpl-img" href="/templates/docs-hub"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&amp;q=80" alt="Docs hub preview" loading="lazy" /></a>
       <div class="tpl-body">
-        <div class="tpl-cmd">stk new my-site --template docs-hub</div>
+        <h3>Docs hub</h3>
+        <p>Guides, API overview and reference.</p>
+        <div class="tpl-cmd-row">
+          <code class="tpl-cmd" id="cmd-docs">stk new my-site --template docs-hub</code>
+          <button size="sm" variant="secondary" icon="copy" on:click="navigator.clipboard.writeText(document.getElementById('cmd-docs').textContent);copied='docs'">Copy</button>
+        </div>
         <div class="tpl-actions">
           <button href="/templates/docs-hub" size="sm" icon="eye">Live preview</button>
         </div>
       </div>
     </div>
+
     <div class="tpl-card">
-      <div class="tpl-preview"><h3>Agency</h3><p>Services, case studies, team and contact form area.</p></div>
+      <a class="tpl-img" href="/templates/agency"><img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&amp;q=80" alt="Agency preview" loading="lazy" /></a>
       <div class="tpl-body">
-        <div class="tpl-cmd">stk new my-site --template agency</div>
+        <h3>Agency</h3>
+        <p>Services, case studies and team.</p>
+        <div class="tpl-cmd-row">
+          <code class="tpl-cmd" id="cmd-agency">stk new my-site --template agency</code>
+          <button size="sm" variant="secondary" icon="copy" on:click="navigator.clipboard.writeText(document.getElementById('cmd-agency').textContent);copied='agency'">Copy</button>
+        </div>
         <div class="tpl-actions">
           <button href="/templates/agency" size="sm" icon="eye">Live preview</button>
         </div>
       </div>
     </div>
+
     <div class="tpl-card">
-      <div class="tpl-preview"><h3>Newsletter</h3><p>Issue archive, subscribe form and featured posts.</p></div>
+      <a class="tpl-img" href="/templates/newsletter"><img src="https://images.unsplash.com/photo-1553729784-e91953dec042?w=800&amp;q=80" alt="Newsletter preview" loading="lazy" /></a>
       <div class="tpl-body">
-        <div class="tpl-cmd">stk new my-site --template newsletter</div>
+        <h3>Newsletter</h3>
+        <p>Issue archive and subscribe block.</p>
+        <div class="tpl-cmd-row">
+          <code class="tpl-cmd" id="cmd-news">stk new my-site --template newsletter</code>
+          <button size="sm" variant="secondary" icon="copy" on:click="navigator.clipboard.writeText(document.getElementById('cmd-news').textContent);copied='news'">Copy</button>
+        </div>
         <div class="tpl-actions">
           <button href="/templates/newsletter" size="sm" icon="eye">Live preview</button>
         </div>
       </div>
     </div>
+
     <div class="tpl-card">
-      <div class="tpl-preview"><h3>Personal</h3><p>Minimal about page with links, notes and a short bio.</p></div>
+      <a class="tpl-img" href="/templates/personal"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&amp;q=80" alt="Personal preview" loading="lazy" /></a>
       <div class="tpl-body">
-        <div class="tpl-cmd">stk new my-site --template personal</div>
+        <h3>Personal</h3>
+        <p>Minimal bio, notes and links.</p>
+        <div class="tpl-cmd-row">
+          <code class="tpl-cmd" id="cmd-personal">stk new my-site --template personal</code>
+          <button size="sm" variant="secondary" icon="copy" on:click="navigator.clipboard.writeText(document.getElementById('cmd-personal').textContent);copied='personal'">Copy</button>
+        </div>
         <div class="tpl-actions">
           <button href="/templates/personal" size="sm" icon="eye">Live preview</button>
         </div>
       </div>
     </div>
+
   </div>
 </section>
 
-<footer github="NishantGits">
-  © Stack. Built by NishantGits.
+<footer github="Nish-Labs">
+  © Stack. Built by Nish-Labs.
 </footer>
 </page>

@@ -1,22 +1,47 @@
-<page title="Changelog — Stack template" theme="forest" favicon="/logo.svg">
+<page title="Changelog" theme="forest" favicon="/logo.svg">
+<style>
+.rel{display:grid;grid-template-columns:100px 1fr;gap:1.25rem;padding:1.5rem 0;border-bottom:1px solid var(--border)}
+.rel img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:10px}
+.bar{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;justify-content:space-between;padding:.75rem 0;border-bottom:1px solid var(--border);margin-bottom:1rem;font-size:.88rem}
+@media(max-width:600px){.rel{grid-template-columns:1fr}}
+</style>
 <navbar brand="Changelog" icon="scroll-text" links="Latest:#latest, Archive:#archive">
   <themeswitch />
 </navbar>
+<div class="bar">
+  <span class="muted">Template · Changelog</span>
+  <div class="stk-row">
+    <button size="sm" variant="secondary" href="/templates" icon="arrow-left">Gallery</button>
+    <button size="sm" variant="secondary" icon="copy" on:click="navigator.clipboard.writeText('stk new my-site --template changelog')">Copy CLI</button>
+  </div>
+</div>
 <section id="latest">
   <h1>Changelog</h1>
   <p class="lead">Product updates, fixes and experiments.</p>
-  <card title="v2.4.0 · Oct 2026">
-    <badge icon="sparkles">New</badge>
-    <p>Template gallery, themes page, and multi-file landing.</p>
-  </card>
-  <card title="v2.3.0 · Sep 2026">
-    <badge>Improved</badge>
-    <p>Faster builds and clearer CLI errors.</p>
-  </card>
-  <card title="v2.2.0 · Aug 2026">
-    <badge>Fixed</badge>
-    <p>Theme switcher persistence across pages.</p>
-  </card>
+  <div class="rel">
+    <img src="https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=300&amp;q=80" alt="" />
+    <div>
+      <badge icon="sparkles">New</badge>
+      <h3 style="margin:.4rem 0">v2.4.0 · Oct 2026</h3>
+      <p>Template gallery, themes page, and multi-file landing.</p>
+    </div>
+  </div>
+  <div class="rel">
+    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=300&amp;q=80" alt="" />
+    <div>
+      <badge>Improved</badge>
+      <h3 style="margin:.4rem 0">v2.3.0 · Sep 2026</h3>
+      <p>Faster builds and clearer CLI errors.</p>
+    </div>
+  </div>
+  <div class="rel">
+    <img src="https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=300&amp;q=80" alt="" />
+    <div>
+      <badge>Fixed</badge>
+      <h3 style="margin:.4rem 0">v2.2.0 · Aug 2026</h3>
+      <p>Theme switcher persistence across pages.</p>
+    </div>
+  </div>
 </section>
 <section id="archive">
   <h2>Earlier</h2>

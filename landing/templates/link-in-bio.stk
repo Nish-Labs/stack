@@ -1,22 +1,32 @@
-<page title="Link in bio — Stack template" theme="neon" favicon="/logo.svg">
+<page title="Maya Chen — Links" theme="neon" favicon="/logo.svg">
 <style>
-.bio{max-width:420px;margin:0 auto;text-align:center;padding:3rem 1rem}
-.bio .avatar{width:88px;height:88px;border-radius:50%;background:var(--surface-2);border:2px solid var(--border);margin:0 auto 1rem;display:flex;align-items:center;justify-content:center}
-.bio h1{font-size:1.5rem;margin:0 0 .35rem}
-.bio .handle{color:var(--muted);margin:0 0 1.5rem}
-.bio .links a{display:block;padding:.9rem 1rem;margin:.6rem 0;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface);color:var(--text);text-decoration:none;font-weight:600}
+.bio{max-width:420px;margin:0 auto;text-align:center;padding:2rem 1rem 3rem}
+.bio .avatar{width:96px;height:96px;border-radius:50%;object-fit:cover;border:3px solid var(--border);margin:0 auto 1rem;display:block}
+.bio h1{font-size:1.45rem;margin:0 0 .25rem}
+.bio .handle{color:var(--muted);margin:0 0 1.4rem}
+.bio .links a{display:block;padding:1rem 1.1rem;margin:.55rem 0;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface);color:var(--text)!important;text-decoration:none;font-weight:600;transition:border-color .15s}
 .bio .links a:hover{border-color:var(--accent)}
+.bio .cover{width:100%;height:140px;object-fit:cover;border-radius:var(--radius);margin-bottom:1.25rem}
+.bar{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;justify-content:space-between;padding:.75rem 0;border-bottom:1px solid var(--border);margin-bottom:1rem;font-size:.88rem}
 </style>
+<div class="bar">
+  <span class="muted">Template · Link in bio</span>
+  <div class="stk-row">
+    <button size="sm" variant="secondary" href="/templates" icon="arrow-left">Gallery</button>
+    <button size="sm" variant="secondary" icon="copy" on:click="navigator.clipboard.writeText('stk new my-site --template link-in-bio')">Copy CLI</button>
+  </div>
+</div>
 <div class="bio">
-  <div class="avatar"><icon name="user" size="36" /></div>
+  <img class="cover" src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&amp;q=80" alt="" />
+  <img class="avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&amp;q=80" alt="Maya Chen" />
   <h1>Maya Chen</h1>
   <p class="handle">@maya · maker &amp; photographer</p>
   <div class="links">
     <a href="#">Portfolio</a>
     <a href="#">Shop prints</a>
-    <a href="#">YouTube</a>
+    <a href="#">YouTube channel</a>
     <a href="#">Newsletter</a>
   </div>
-  <p style="margin-top:2rem"><themeswitch /></p>
+  <p style="margin-top:1.5rem"><themeswitch /></p>
 </div>
 </page>

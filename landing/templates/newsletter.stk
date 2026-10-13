@@ -1,7 +1,20 @@
-<page title="Newsletter — Stack template" theme="paper" favicon="/logo.svg">
+<page title="Weekly Signal" theme="paper" favicon="/logo.svg">
+<style>
+.issue{display:grid;grid-template-columns:140px 1fr;gap:1.15rem;align-items:center;padding:1.1rem 0;border-bottom:1px solid var(--border)}
+.issue img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:10px}
+.bar{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;justify-content:space-between;padding:.75rem 0;border-bottom:1px solid var(--border);margin-bottom:1rem;font-size:.88rem}
+@media(max-width:600px){.issue{grid-template-columns:1fr}}
+</style>
 <navbar brand="Weekly Signal" icon="mail" links="Issues:#issues, About:#about" cta="Subscribe:#sub">
   <themeswitch />
 </navbar>
+<div class="bar">
+  <span class="muted">Template · Newsletter</span>
+  <div class="stk-row">
+    <button size="sm" variant="secondary" href="/templates" icon="arrow-left">Gallery</button>
+    <button size="sm" variant="secondary" icon="copy" on:click="navigator.clipboard.writeText('stk new my-site --template newsletter')">Copy CLI</button>
+  </div>
+</div>
 <hero>
   <h1>One useful idea every week</h1>
   <p class="lead">No ads. No fluff. Tools, systems and shipping notes.</p>
@@ -9,13 +22,23 @@
 </hero>
 <section id="issues">
   <h2>Recent issues</h2>
-  <card title="#42 — Delete more">Why removing features can increase retention.</card>
-  <card title="#41 — Theme tokens">A minimal set of CSS variables that scale.</card>
-  <card title="#40 — Static is underrated">When not to reach for a framework.</card>
+  <div class="issue">
+    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=300&amp;q=80" alt="" loading="lazy" />
+    <div><h3>#42 — Delete more</h3><p class="muted">Why removing features can increase retention.</p></div>
+  </div>
+  <div class="issue">
+    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=300&amp;q=80" alt="" loading="lazy" />
+    <div><h3>#41 — Theme tokens</h3><p class="muted">A minimal set of CSS variables that scale.</p></div>
+  </div>
+  <div class="issue">
+    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=300&amp;q=80" alt="" loading="lazy" />
+    <div><h3>#40 — Static is underrated</h3><p class="muted">When not to reach for a framework.</p></div>
+  </div>
 </section>
 <section id="sub">
   <h2>Subscribe</h2>
   <alert type="success">Join 4,200 readers. Unsubscribe anytime.</alert>
+  <button icon="mail">Get the next issue</button>
 </section>
 <section id="about">
   <h2>About</h2>

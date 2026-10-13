@@ -1,25 +1,39 @@
-<page title="Resume — Stack template" theme="daylight" favicon="/logo.svg">
-<navbar brand="Jordan Lee" icon="file-text" links="Experience:#exp, Skills:#skills, Education:#edu" cta="Download PDF:#">
+<page title="Jordan Lee — Resume" theme="daylight" favicon="/logo.svg">
+<style>
+.head{display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap}
+.head img{width:96px;height:96px;border-radius:50%;object-fit:cover;border:2px solid var(--border)}
+.job{border-left:3px solid var(--accent);padding-left:1rem;margin:1.25rem 0}
+.bar{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;justify-content:space-between;padding:.75rem 0;border-bottom:1px solid var(--border);margin-bottom:1rem;font-size:.88rem}
+</style>
+<navbar brand="Jordan Lee" icon="file-text" links="Experience:#exp, Skills:#skills, Education:#edu" cta="Email:mailto:jordan@example.com">
   <themeswitch />
 </navbar>
+<div class="bar">
+  <span class="muted">Template · Resume</span>
+  <div class="stk-row">
+    <button size="sm" variant="secondary" href="/templates" icon="arrow-left">Gallery</button>
+    <button size="sm" variant="secondary" icon="copy" on:click="navigator.clipboard.writeText('stk new my-site --template resume')">Copy CLI</button>
+  </div>
+</div>
 <hero>
-  <h1>Jordan Lee</h1>
-  <p class="lead">Full-stack engineer · TypeScript, design systems, static tooling.</p>
-  <badge icon="map-pin">Remote · EU</badge>
+  <div class="head">
+    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&amp;q=80" alt="Jordan Lee" />
+    <div>
+      <h1>Jordan Lee</h1>
+      <p class="lead" style="margin:0">Full-stack engineer · TypeScript, design systems, static tooling.</p>
+      <p style="margin:.5rem 0 0"><badge icon="map-pin">Remote · EU</badge></p>
+    </div>
+  </div>
 </hero>
 <section id="exp">
   <h2>Experience</h2>
-  <card title="Senior Engineer · Northwind">2022–present · Led the design-system migration and cut build times 40%.</card>
-  <card title="Engineer · Contoso Labs">2019–2022 · Shipped the public API and docs site.</card>
+  <div class="job"><h3>Senior Engineer · Northwind</h3><p class="muted">2022–present</p><p>Led the design-system migration and cut build times 40%.</p></div>
+  <div class="job"><h3>Engineer · Contoso Labs</h3><p class="muted">2019–2022</p><p>Shipped the public API and documentation site.</p></div>
 </section>
 <section id="skills">
   <h2>Skills</h2>
   <div class="stk-row">
-    <badge>TypeScript</badge>
-    <badge>React</badge>
-    <badge>Node</badge>
-    <badge>CSS</badge>
-    <badge>CI/CD</badge>
+    <badge>TypeScript</badge><badge>React</badge><badge>Node</badge><badge>CSS</badge><badge>CI/CD</badge>
   </div>
 </section>
 <section id="edu">

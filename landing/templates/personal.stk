@@ -1,10 +1,29 @@
-<page title="Personal — Stack template" theme="nord" favicon="/logo.svg">
+<page title="Sam — Personal" theme="nord" favicon="/logo.svg">
+<style>
+.me{display:flex;gap:1.5rem;align-items:center;flex-wrap:wrap}
+.me img{width:110px;height:110px;border-radius:50%;object-fit:cover;border:3px solid var(--border)}
+.shot{width:100%;border-radius:var(--radius);margin:1.25rem 0;max-height:280px;object-fit:cover}
+.bar{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;justify-content:space-between;padding:.75rem 0;border-bottom:1px solid var(--border);margin-bottom:1rem;font-size:.88rem}
+</style>
 <navbar brand="Sam" icon="smile" links="Notes:#notes, Links:#links">
   <themeswitch />
 </navbar>
+<div class="bar">
+  <span class="muted">Template · Personal</span>
+  <div class="stk-row">
+    <button size="sm" variant="secondary" href="/templates" icon="arrow-left">Gallery</button>
+    <button size="sm" variant="secondary" icon="copy" on:click="navigator.clipboard.writeText('stk new my-site --template personal')">Copy CLI</button>
+  </div>
+</div>
 <hero>
-  <h1>Hi, I'm Sam.</h1>
-  <p class="lead">I build small tools and write about them. Based in Berlin.</p>
+  <div class="me">
+    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&amp;q=80" alt="Sam" />
+    <div>
+      <h1>Hi, I'm Sam.</h1>
+      <p class="lead" style="margin:0">I build small tools and write about them. Based in Berlin.</p>
+    </div>
+  </div>
+  <img class="shot" src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1000&amp;q=80" alt="Desk" />
 </hero>
 <section id="notes">
   <h2>Notes</h2>

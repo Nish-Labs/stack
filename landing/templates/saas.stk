@@ -1,17 +1,33 @@
-<page title="SaaS — Stack template" theme="daylight" favicon="/logo.svg">
+<page title="Pulse — Ship product updates" theme="daylight" favicon="/logo.svg">
+<style>
+.shot{width:100%;border-radius:var(--radius);border:1px solid var(--border);box-shadow:var(--shadow)}
+.price{text-align:center;padding:1.75rem 1.25rem}
+.price .amt{font-size:2.4rem;font-weight:800;font-family:var(--heading-font);margin:.4rem 0}
+.bar{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;justify-content:space-between;padding:.75rem 0;border-bottom:1px solid var(--border);margin-bottom:1rem;font-size:.88rem}
+</style>
 <navbar brand="Pulse" icon="activity" links="Features:#features, Pricing:#pricing, FAQ:#faq" cta="Start free:#cta">
   <themeswitch />
 </navbar>
+<div class="bar">
+  <span class="muted">Template · SaaS</span>
+  <div class="stk-row">
+    <button size="sm" variant="secondary" href="/templates" icon="arrow-left">Gallery</button>
+    <button size="sm" variant="secondary" icon="copy" on:click="navigator.clipboard.writeText('stk new my-site --template saas')">Copy CLI</button>
+  </div>
+</div>
 <hero>
   <h1>Ship product updates your team actually reads</h1>
-  <p class="lead">Pulse turns release notes into a living changelog your customers open every week.</p>
+  <p class="lead">Pulse turns release notes into a living changelog customers open every week.</p>
   <div class="stk-row">
     <button href="#cta" icon="rocket">Start free</button>
     <button variant="secondary" href="#features" icon="play">See how it works</button>
   </div>
+  <p style="margin-top:2rem">
+    <img class="shot" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&amp;q=80" alt="Product dashboard" />
+  </p>
 </hero>
 <section id="features">
-  <h2>Features</h2>
+  <h2>Everything you need</h2>
   <grid cols="3">
     <card icon="zap" title="Instant publish">Write once, push live in seconds.</card>
     <card icon="users" title="Audience segments">Show the right notes to the right plan.</card>
@@ -21,9 +37,9 @@
 <section id="pricing">
   <h2>Pricing</h2>
   <grid cols="3">
-    <card title="Starter">$0 · 1 project · community support</card>
-    <card title="Team">$29/mo · unlimited projects · SSO</card>
-    <card title="Scale">Custom · SLA · dedicated success</card>
+    <div class="stk-card price"><h3>Starter</h3><div class="amt">$0</div><p class="muted">1 project · community</p><button size="sm" href="#cta">Get started</button></div>
+    <div class="stk-card price" style="border-color:var(--accent)"><badge>Popular</badge><h3>Team</h3><div class="amt">$29</div><p class="muted">Unlimited · SSO</p><button size="sm" href="#cta">Start trial</button></div>
+    <div class="stk-card price"><h3>Scale</h3><div class="amt">Custom</div><p class="muted">SLA · success</p><button size="sm" variant="secondary" href="#cta">Talk to us</button></div>
   </grid>
 </section>
 <section id="faq">
@@ -35,7 +51,7 @@
   </md>
 </section>
 <section id="cta">
-  <h2>Ready?</h2>
+  <h2>Ready to ship clearer updates?</h2>
   <button icon="arrow-right">Create your workspace</button>
 </section>
 <footer>© Pulse. Built with Stack.</footer>

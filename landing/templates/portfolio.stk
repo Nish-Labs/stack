@@ -1,31 +1,68 @@
-<page title="Portfolio — Stack template" theme="midnight" favicon="/logo.svg">
-<navbar brand="Alex Rivera" icon="layers" links="Work:#work, About:#about, Contact:#contact" cta="Email me:mailto:alex@example.com">
+<page title="Alex Rivera — Portfolio" description="Product designer and builder" theme="midnight" favicon="/logo.svg">
+<style>
+.work-card{overflow:hidden;padding:0!important}
+.work-card img{width:100%;aspect-ratio:16/10;object-fit:cover;display:block}
+.work-card .body{padding:1.15rem 1.25rem 1.35rem}
+.portrait{width:120px;height:120px;border-radius:50%;object-fit:cover;border:3px solid var(--border)}
+.bar{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;justify-content:space-between;padding:.75rem 0;border-bottom:1px solid var(--border);margin-bottom:1rem;font-size:.88rem}
+</style>
+<navbar brand="Alex Rivera" icon="layers" links="Work:#work, About:#about, Contact:#contact" cta="Email:mailto:alex@example.com">
   <themeswitch />
 </navbar>
-<hero>
-  <h1>Product designer &amp; builder</h1>
-  <p class="lead">I design and ship interfaces that feel inevitable. Currently open to select projects.</p>
+<div class="bar">
+  <span class="muted">Template · Portfolio</span>
   <div class="stk-row">
-    <button href="#work" icon="arrow-down">See work</button>
-    <button variant="secondary" href="mailto:alex@example.com" icon="mail">Get in touch</button>
+    <button size="sm" variant="secondary" href="/templates" icon="arrow-left">Gallery</button>
+    <button size="sm" variant="secondary" icon="copy" on:click="navigator.clipboard.writeText('stk new my-site --template portfolio')">Copy CLI</button>
   </div>
+</div>
+<hero>
+  <grid cols="2">
+    <div>
+      <badge icon="sparkles">Available for work</badge>
+      <h1>Product designer &amp; builder</h1>
+      <p class="lead">I design and ship interfaces that feel inevitable. Currently based in Lisbon.</p>
+      <div class="stk-row">
+        <button href="#work" icon="arrow-down">See work</button>
+        <button variant="secondary" href="mailto:alex@example.com" icon="mail">Get in touch</button>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:center;align-items:center">
+      <img class="portrait" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&amp;q=80" alt="Alex Rivera" />
+    </div>
+  </grid>
 </hero>
 <section id="work">
   <h2>Selected work</h2>
   <grid cols="2">
-    <card icon="smartphone" title="Fintech mobile">End-to-end design for a savings app used by 40k people.</card>
-    <card icon="layout" title="Docs platform">Redesigned navigation and search for a developer portal.</card>
-    <card icon="shopping-bag" title="Retail checkout">Reduced drop-off 18% with a clearer multi-step flow.</card>
-    <card icon="bar-chart" title="Analytics suite">Dashboard system for a B2B SaaS team.</card>
+    <div class="stk-card work-card">
+      <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&amp;q=80" alt="Fintech app" loading="lazy" />
+      <div class="body"><h3>Fintech mobile</h3><p>End-to-end design for a savings app used by 40k people.</p></div>
+    </div>
+    <div class="stk-card work-card">
+      <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&amp;q=80" alt="Docs platform" loading="lazy" />
+      <div class="body"><h3>Docs platform</h3><p>Redesigned navigation and search for a developer portal.</p></div>
+    </div>
+    <div class="stk-card work-card">
+      <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&amp;q=80" alt="Retail checkout" loading="lazy" />
+      <div class="body"><h3>Retail checkout</h3><p>Reduced drop-off 18% with a clearer multi-step flow.</p></div>
+    </div>
+    <div class="stk-card work-card">
+      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&amp;q=80" alt="Analytics" loading="lazy" />
+      <div class="body"><h3>Analytics suite</h3><p>Dashboard system for a B2B SaaS team.</p></div>
+    </div>
   </grid>
 </section>
 <section id="about">
   <h2>About</h2>
-  <p>Based in Lisbon. Previously at two startups and one agency. I care about clarity, restraint and shipping.</p>
+  <p class="lead">Previously at two startups and one agency. I care about clarity, restraint and shipping on time.</p>
+  <div class="stk-row">
+    <badge>Figma</badge><badge>Design systems</badge><badge>Prototyping</badge><badge>Front-end</badge>
+  </div>
 </section>
 <section id="contact">
   <h2>Contact</h2>
-  <alert type="info">alex@example.com · available for new work from next month.</alert>
+  <alert type="info">alex@example.com · open to select projects from next month.</alert>
 </section>
 <footer github="example">© Alex Rivera. Built with Stack.</footer>
 </page>

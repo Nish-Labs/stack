@@ -1,26 +1,52 @@
-<page title="Event — Stack template" theme="rose" favicon="/logo.svg">
-<navbar brand="Build Week" icon="calendar" links="Schedule:#schedule, Speakers:#speakers" cta="Get tickets:#tickets">
+<page title="Build Week — Lisbon" theme="rose" favicon="/logo.svg">
+<style>
+.hero-bg{width:100%;max-height:320px;object-fit:cover;border-radius:var(--radius);margin-top:1.2rem}
+.speaker{text-align:center}
+.speaker img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:var(--radius);margin-bottom:.75rem}
+.bar{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;justify-content:space-between;padding:.75rem 0;border-bottom:1px solid var(--border);margin-bottom:1rem;font-size:.88rem}
+</style>
+<navbar brand="Build Week" icon="calendar" links="Schedule:#schedule, Speakers:#speakers" cta="Tickets:#tickets">
   <themeswitch />
 </navbar>
+<div class="bar">
+  <span class="muted">Template · Event</span>
+  <div class="stk-row">
+    <button size="sm" variant="secondary" href="/templates" icon="arrow-left">Gallery</button>
+    <button size="sm" variant="secondary" icon="copy" on:click="navigator.clipboard.writeText('stk new my-site --template event')">Copy CLI</button>
+  </div>
+</div>
 <hero>
   <badge>Nov 14–15 · Lisbon</badge>
   <h1>Two days of shipping together</h1>
   <p class="lead">Talks in the morning, builds in the afternoon. Bring a laptop.</p>
   <button href="#tickets" icon="ticket">Get tickets</button>
+  <img class="hero-bg" src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&amp;q=80" alt="Conference" />
 </hero>
 <section id="schedule">
   <h2>Schedule</h2>
   <grid cols="2">
-    <card title="Day 1">Keynotes · workshops · open build</card>
-    <card title="Day 2">Lightning talks · demos · wrap party</card>
+    <card title="Day 1" icon="sunrise">Keynotes · workshops · open build</card>
+    <card title="Day 2" icon="moon">Lightning talks · demos · wrap party</card>
   </grid>
 </section>
 <section id="speakers">
   <h2>Speakers</h2>
   <grid cols="3">
-    <card title="Sam Ortiz">Design systems at scale</card>
-    <card title="Riley Park">Static-first architecture</card>
-    <card title="Nova Kim">DX that ships</card>
+    <div class="speaker">
+      <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&amp;q=80" alt="" loading="lazy" />
+      <h3>Sam Ortiz</h3>
+      <p class="muted">Design systems at scale</p>
+    </div>
+    <div class="speaker">
+      <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&amp;q=80" alt="" loading="lazy" />
+      <h3>Riley Park</h3>
+      <p class="muted">Static-first architecture</p>
+    </div>
+    <div class="speaker">
+      <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&amp;q=80" alt="" loading="lazy" />
+      <h3>Nova Kim</h3>
+      <p class="muted">DX that ships</p>
+    </div>
   </grid>
 </section>
 <section id="tickets">
